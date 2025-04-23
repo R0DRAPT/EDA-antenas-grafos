@@ -1,0 +1,23 @@
+# Ignorar ficheiros executáveis
+*.exe
+
+# Ignorar a pasta de configuração do VSCode
+.vscode/
+
+# Ignorar ficheiros e pastas gerados pelo Doxygen
+doc/html/
+doc/latex/
+
+# Ignorar outros ficheiros temporários ou de sistema
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos objeto
+*.o
+*.a
+
+# Ignorar o executável gerado
+programa
