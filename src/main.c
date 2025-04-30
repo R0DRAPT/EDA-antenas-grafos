@@ -10,6 +10,7 @@
 
  #include <stdio.h>
  #include <stdlib.h>
+ #include <stdbool.h>
  #include "funcoes.h"
  
  /**
@@ -39,22 +40,57 @@
   #pragma endregion
 
   #pragma region Cria_&_Insere_Antena
-  // Criação e inserção de antenas no início da lista principal
-  Antenas* a1 = CriarAntena('A', 1, 1);
+  // Cria a antena e depois insere-a no inicio da lista ligada
+  printf("\n");
+  Antenas* a1 = CriarAntena('A', 2, 2);
   ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, a1);
 
-  // Criação e inserção de antenas no fim da lista principal
+  // Cria a antena e depois insere-a no fim da lista principal
   Antenas* a2 = CriarAntena('C', 7, 7);
   ListaAntenasAux = InserirAntenaFim(ListaAntenasAux, a2);
 
-  // Criação e inserção de antenas na lista principal ordenadamente
-  Antenas* a3 = CriarAntena('J', 6, 6);
+  // Cria a antena e depois insere-a lista principal ordenadamente
+  Antenas* a3 = CriarAntena('H', 1, 1);
   ListaAntenasAux = InserirAntenasOrdenado(ListaAntenasAux, a3);
 
   MostrarLista(ListaAntenasAux);
   #pragma endregion
 
-  
+  #pragma region Modifica_Antena
+  //Modifica uma antena criada previamente
+  printf("\nAntena Modificada\n");
+  ListaAntenasAux = ModificarAntena(ListaAntenasAux, 7, 7, 'I', 3, 6);
+  #pragma endregion
+
+  #pragma region Calcular_Efeito_Nefasto
+  //Chama a funcao "EfeitoNefasto" onde e calculado o efeito nefasto das antenas na lista ligada
+  printf("\nEfeito nefasto calculado\n");
+  listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
+  printf("\n");
+  MostrarListaNefasto(listaNefasto);
+  #pragma endregion
+
+  #pragma region Remover_Antena
+  ListaAntenasAux = RemoverAntena(ListaAntenasAux, listaNefasto, 2, 2);
+
+  //Liberta a memória da lista de efeitos antiga
+  LimparMemoriaEfeito(listaNefasto);
+
+  //Volta a chamar a função "CalcularEfeitoNefasto" para voltar a calcular 
+  listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
+
+  // MostrarLista(ListaAntenasAux);
+  // printf("\n");
+  // printf("Nefastoooo ----------------\n");
+  // MostrarListaNefasto(listaNefasto);
+  #pragma endregion
+
+  #pragma region Limpar_Memorias
+  // Liberta a memória alocada da lista ligada de antenas
+  LimparMemoria(ListaAntenasAux);
+  // Liberta a memória alocada da lista ligada do efeito nefasto
+  LimparMemoriaEfeito(listaNefasto);
+  #pragma endregion
 
   return 0; // Retorna 0 em caso de sucesso.
 }
