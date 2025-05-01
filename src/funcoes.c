@@ -18,9 +18,6 @@
 /**
  * @brief Lê o ficheiro "mapaAntenas.txt" e imprime o seu conteúdo no terminal.
  * 
- * A função abre o ficheiro localizado na pasta "Ficheiros" e exibe as informações
- * armazenadas nele.
- * 
  * @return Retorna NULL pois não altera a lista ligada, apenas exibe os dados.
  */
 Antenas* ListarMapaAntenas(const char *nomeFicheiro) {
@@ -40,12 +37,12 @@ Antenas* ListarMapaAntenas(const char *nomeFicheiro) {
 }
 
 /**
- * @brief 
+ * @brief Cria uma nova antena com os dados fornecidos.
  * 
- * @param freq 
- * @param x 
- * @param y 
- * @return Antenas* 
+ * @param freq Carácter que representa a frequência da antena.
+ * @param x Coordenada X da antena.
+ * @param y Coordenada Y da antena.
+ * @return Antenas* Ponteiro para a nova antena criada ou NULL em caso de falha.
  */
 Antenas* CriarAntena(char freq, int x, int y) {
     Antenas* nova = (Antenas*)malloc(sizeof(Antenas));
@@ -62,11 +59,11 @@ Antenas* CriarAntena(char freq, int x, int y) {
 }
 
 /**
- * @brief 
+ * @brief Insere uma antena no início da lista ligada.
  * 
- * @param inicio 
- * @param nova 
- * @return Antenas* 
+ * @param inicio Ponteiro para o início da lista ligada.
+ * @param nova Ponteiro para a nova antena a ser inserida.
+ * @return Antenas* Ponteiro atualizado para o início da lista.
  */
 Antenas* InserirAntenaInicio(Antenas* inicio, Antenas* nova) {
     if (nova == NULL) return inicio;
@@ -76,11 +73,11 @@ Antenas* InserirAntenaInicio(Antenas* inicio, Antenas* nova) {
 }
 
 /**
- * @brief 
+ * @brief Insere uma antena no final da lista ligada.
  * 
- * @param inicio 
- * @param nova 
- * @return Antenas* 
+ * @param inicio Ponteiro para o início da lista ligada.
+ * @param nova Ponteiro para a nova antena a ser inserida.
+ * @return Antenas* Ponteiro para o início da lista após inserção.
  */
 Antenas* InserirAntenaFim(Antenas* inicio, Antenas* nova) {
     if (nova == NULL) return inicio;
@@ -101,11 +98,11 @@ Antenas* InserirAntenaFim(Antenas* inicio, Antenas* nova) {
 }
 
 /**
- * @brief 
+ * @brief Insere uma antena na lista ligada de forma ordenada pelas coordenadas (x, y).
  * 
- * @param inicio 
- * @param nova 
- * @return Antenas* 
+ * @param inicio Ponteiro para o início da lista ligada.
+ * @param nova Ponteiro para a nova antena a ser inserida.
+ * @return Antenas* Ponteiro para o início da lista atualizada.
  */
 Antenas* InserirAntenasOrdenado(Antenas* inicio, Antenas* nova) {
     if (nova == NULL) return inicio;
@@ -169,22 +166,18 @@ Antenas* CarregarMapaAntenas(const char *nomeFicheiro) {
 }
 
 /**
- * @brief Modifica as propriedades de uma antena existente na lista encadeada.
+ * @brief Modifica uma antena existente na lista.
  * 
- * Esta função procura uma antena nas coordenadas fornecidas (x, y) e, se encontrada,
- * altera a sua frequência e move-a para novas coordenadas (novoX, novoY), garantindo
- * que não haja duplicação de antenas nessas novas coordenadas.
+ * Procura uma antena nas coordenadas (x, y) e altera sua frequência e coordenadas,
+ * se não houver conflito com outra antena nas novas coordenadas.
  * 
- * @param inicio Ponteiro para o início da lista encadeada de antenas.
- * @param x Coordenada X da antena a ser modificada.
- * @param y Coordenada Y da antena a ser modificada.
- * @param novaFreq Nova frequência a ser atribuída à antena.
- * @param novoX Nova coordenada X para onde a antena será movida.
- * @param novoY Nova coordenada Y para onde a antena será movida.
- * @return Antenas* Retorna o ponteiro para o início da lista (possivelmente modificada).
- * 
- * @note Se já existir uma antena nas novas coordenadas (novoX, novoY), a modificação não ocorre.
- * @note Caso a antena não seja encontrada, a lista mantém-se inalterada.
+ * @param inicio Ponteiro para o início da lista de antenas.
+ * @param x Coordenada X da antena a modificar.
+ * @param y Coordenada Y da antena a modificar.
+ * @param novaFreq Nova frequência da antena.
+ * @param novoX Nova coordenada X.
+ * @param novoY Nova coordenada Y.
+ * @return Antenas* Ponteiro para o início da lista, possivelmente atualizada.
  */
 Antenas* ModificarAntena(Antenas* inicio, int x, int y, char novaFreq, int novoX, int novoY) {
     // Verifica se a lista está vazia
@@ -220,15 +213,13 @@ Antenas* ModificarAntena(Antenas* inicio, int x, int y, char novaFreq, int novoX
 }
 
 /**
- * @brief Calcula o efeito nefasto entre as antenas com a mesma frequência.
+ * @brief Calcula e retorna os pontos com efeito nefasto entre antenas com a mesma frequência.
  * 
- * Esta função percorre todas as antenas na lista e, para cada par de antenas que possuem
- * a mesma frequência, calcula dois novos pontos que representam o efeito nefasto causado
- * por essas antenas. Os pontos resultantes são inseridos em uma lista, desde que as 
- * coordenadas sejam válidas (ou seja, x >= 1 e y >= 1).
+ * Para cada par de antenas com a mesma frequência, calcula dois pontos simétricos e adiciona
+ * à lista de efeitos nefastos, se forem válidos (x >= 1 e y >= 1).
  * 
- * @param lista Lista ligada de antenas.
- * @return ListaEfeitoNefasto* Retorna uma lista ligada com os pontos calculados do efeito nefasto.
+ * @param lista Ponteiro para a lista de antenas.
+ * @return ListaEfeitoNefasto* Lista com os pontos de efeito nefasto.
  */
 ListaEfeitoNefasto* CalcularEfeitoNefasto(Antenas* lista) {
     if (lista == NULL) return NULL;
@@ -260,16 +251,14 @@ ListaEfeitoNefasto* CalcularEfeitoNefasto(Antenas* lista) {
 }
 
 /**
- * @brief Insere um novo ponto na lista de efeito nefasto, se ele não existir ainda.
+ * @brief Insere um ponto na lista de efeito nefasto se ele ainda não existir.
  * 
- * Esta função verifica se o ponto especificado pelas coordenadas (x, y) já existe na lista.
- * Se o ponto não existir, ele será inserido no início da lista. Caso contrário, a lista permanece
- * inalterada. Essa função é usada para garantir que não haja duplicatas na lista do efeito nefasto.
+ * Evita duplicações ao inserir novos pontos na lista.
  * 
- * @param lista Lista ligada de pontos do efeito nefasto.
- * @param x Coordenada X do ponto a ser inserido.
- * @param y Coordenada Y do ponto a ser inserido.
- * @return ListaEfeitoNefasto* Retorna a lista com o ponto inserido, caso ele não existisse.
+ * @param lista Lista de pontos do efeito nefasto.
+ * @param x Coordenada X do novo ponto.
+ * @param y Coordenada Y do novo ponto.
+ * @return ListaEfeitoNefasto* Lista atualizada com o novo ponto, se inserido.
  */
 ListaEfeitoNefasto* InserirEfeitoSeNaoExiste(ListaEfeitoNefasto* lista, int x, int y) {
     ListaEfeitoNefasto* atual = lista;
@@ -292,17 +281,16 @@ ListaEfeitoNefasto* InserirEfeitoSeNaoExiste(ListaEfeitoNefasto* lista, int x, i
 }
 
 /**
- * @brief Remove uma antena da lista ligada e também remove os efeitos nefastos relacionados.
+ * @brief Remove uma antena da lista e os efeitos nefastos associados.
  * 
- * Esta função remove uma antena específica da lista ligada com base nas coordenadas fornecidas.
- * Além disso, também remove os efeitos nefastos gerados por essa antena na lista de efeitos nefastos.
+ * Remove a antena localizada nas coordenadas (x, y) e elimina os efeitos nefastos
+ * relacionados a ela. A memória da antena removida é libertada.
  * 
- * @param inicio Ponteiro para o início da lista ligada de antenas.
- * @param inicioNefasto Ponteiro para o início da lista de efeitos nefastos.
+ * @param inicio Ponteiro para o início da lista de antenas.
+ * @param inicioNefasto Ponteiro para a lista de efeitos nefastos.
  * @param x Coordenada X da antena a remover.
  * @param y Coordenada Y da antena a remover.
- * @return Antenas* Retorna o ponteiro para o início da lista ligada após a remoção da antena.
- * @return ListaEfeitoNefasto* Retorna o ponteiro para o início da lista de efeitos nefastos após a remoção dos efeitos relacionados.
+ * @return Antenas* Ponteiro para a lista de antenas após a remoção.
  */
 Antenas* RemoverAntena(Antenas* inicio, ListaEfeitoNefasto* inicioNefasto, int x, int y) {
     // Verifica se a lista de antenas está vazia
@@ -341,15 +329,14 @@ Antenas* RemoverAntena(Antenas* inicio, ListaEfeitoNefasto* inicioNefasto, int x
 }
 
 /**
- * @brief Remove os efeitos nefastos gerados por uma antena específica.
+ * @brief Remove efeitos nefastos relacionados a uma antena.
  * 
- * Esta função percorre a lista de efeitos nefastos e remove todos os efeitos
- * relacionados à antena fornecida pelas coordenadas (x, y).
+ * Percorre a lista de efeitos e remove todos os pontos afetados pelas coordenadas (x, y).
  * 
  * @param inicio Ponteiro para o início da lista de efeitos nefastos.
- * @param x Coordenada X da antena cujos efeitos nefastos serão removidos.
- * @param y Coordenada Y da antena cujos efeitos nefastos serão removidos.
- * @return ListaEfeitoNefasto* Retorna o ponteiro para o início da lista de efeitos nefastos após a remoção.
+ * @param x Coordenada X da antena.
+ * @param y Coordenada Y da antena.
+ * @return ListaEfeitoNefasto* Lista atualizada sem os efeitos removidos.
  */
 ListaEfeitoNefasto* RemoverEfeitosNefastos(ListaEfeitoNefasto* inicio, int x, int y) {
     ListaEfeitoNefasto* atual = inicio;
@@ -380,6 +367,150 @@ ListaEfeitoNefasto* RemoverEfeitosNefastos(ListaEfeitoNefasto* inicio, int x, in
 
     return inicio; // Retorna a lista de efeitos nefastos atualizada
 }
+
+/**
+ * @brief Cria uma tabela formatada com antenas e efeitos nefastos.
+ * 
+ * Gera uma string com dados tabulares das antenas e dos efeitos nefastos.
+ * A string é alocada dinamicamente e deve ser libertada com `free()`.
+ * 
+ * @param listaAntenas Ponteiro para a lista de antenas.
+ * @param listaNefasto Ponteiro para a lista de efeitos nefastos.
+ * @return char* String formatada ou NULL em caso de erro.
+ */
+char* CriarTabela(Antenas* listaAntenas, ListaEfeitoNefasto* listaNefasto) {
+    // Buffer inicial
+    size_t tamanho = 2048;
+    char* buffer = (char*)malloc(tamanho);
+    if (!buffer) return NULL;
+    buffer[0] = '\0';
+
+    // Cabeçalho
+    strcat(buffer, "\n\nLista Antenas         Efeitos Nefastos\n");
+    strcat(buffer, "--------------------- -------------------\n");
+    strcat(buffer, "Freq    X    Y        | X    Y\n");
+
+    Antenas* atualAntena = listaAntenas;
+    ListaEfeitoNefasto* atualEfeito = listaNefasto;
+    char linha[128];
+
+    while (atualAntena != NULL || atualEfeito != NULL) {
+        linha[0] = '\0';
+
+        // Antena
+        if (atualAntena != NULL) {
+            snprintf(linha + strlen(linha), sizeof(linha) - strlen(linha),
+                     " %-6c %-4d %-4d     |", atualAntena->freq, atualAntena->x, atualAntena->y);
+            atualAntena = atualAntena->prox;
+        } else {
+            strcat(linha, "                      |");
+        }
+
+        // Efeito nefasto
+        if (atualEfeito != NULL) {
+            snprintf(linha + strlen(linha), sizeof(linha) - strlen(linha),
+                     " %-4d %-4d\n", atualEfeito->x, atualEfeito->y);
+            atualEfeito = atualEfeito->prox;
+        } else {
+            strcat(linha, "\n");
+        }
+
+        // Se buffer precisar crescer
+        if (strlen(buffer) + strlen(linha) + 1 > tamanho) {
+            tamanho *= 2;
+            char* novo = realloc(buffer, tamanho);
+            if (!novo) {
+                free(buffer);
+                return NULL;
+            }
+            buffer = novo;
+        }
+
+        strcat(buffer, linha);
+    }
+
+    return buffer;
+}
+
+/**
+ * @brief Grava a lista de antenas num ficheiro binário.
+ * 
+ * Escreve os dados de cada antena no ficheiro especificado, sem guardar ponteiros.
+ * 
+ * @param inicio Ponteiro para a lista de antenas.
+ * @param nomeFicheiro Nome do ficheiro binário.
+ * @return true Se a gravação for bem-sucedida.
+ * @return false Em caso de erro.
+ */
+bool GravarListaFicheiro(Antenas* inicio, const char* nomeFicheiro) {
+    if (inicio == NULL) return false;
+
+    FILE* fp = fopen(nomeFicheiro, "wb");
+    if (fp == NULL) return false;
+
+    Antenas* aux = inicio;
+    AntenasBin elemento;
+
+    while (aux != NULL) {
+        elemento.x = aux->x;
+        elemento.y = aux->y;
+        elemento.freq = aux->freq;
+
+        fwrite(&elemento, sizeof(AntenasBin), 1, fp);
+        aux = aux->prox;
+    }
+
+    fclose(fp);
+    return true;
+}
+
+/**
+ * @brief Lê antenas de um ficheiro binário e devolve uma string formatada.
+ * 
+ * Lê os dados de antenas do ficheiro binário e devolve uma string com as informações.
+ * A string é alocada dinamicamente e deve ser libertada com `free()`.
+ * 
+ * @param nomeFicheiro Nome do ficheiro a ler.
+ * @return char* String formatada ou NULL em caso de erro.
+ */
+char* LerListaFicheiro(const char* nomeFicheiro) {
+    FILE* fp = fopen(nomeFicheiro, "rb");
+    if (fp == NULL) return NULL;
+
+    size_t tamanho = 2048;
+    char* buffer = malloc(tamanho);
+    if (!buffer) {
+        fclose(fp);
+        return NULL;
+    }
+    buffer[0] = '\0';
+
+    AntenasBin elemento;
+    char linha[64];
+
+    while (fread(&elemento, sizeof(AntenasBin), 1, fp) == 1) {
+        snprintf(linha, sizeof(linha), "%c - (%d, %d)\n", elemento.freq, elemento.x, elemento.y);
+
+        // Expande buffer se necessário
+        if (strlen(buffer) + strlen(linha) + 1 > tamanho) {
+            tamanho *= 2;
+            char* novo = realloc(buffer, tamanho);
+            if (!novo) {
+                free(buffer);
+                fclose(fp);
+                return NULL;
+            }
+            buffer = novo;
+        }
+
+        strcat(buffer, linha);
+    }
+
+    fclose(fp);
+    return buffer;
+}
+
+
 
 
 

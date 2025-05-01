@@ -71,6 +71,7 @@
   #pragma endregion
 
   #pragma region Remover_Antena
+  printf("\nRemover a Antena A - (2, 2)\n");
   ListaAntenasAux = RemoverAntena(ListaAntenasAux, listaNefasto, 2, 2);
 
   //Liberta a memória da lista de efeitos antiga
@@ -79,10 +80,42 @@
   //Volta a chamar a função "CalcularEfeitoNefasto" para voltar a calcular 
   listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
 
-  // MostrarLista(ListaAntenasAux);
-  // printf("\n");
-  // printf("Nefastoooo ----------------\n");
-  // MostrarListaNefasto(listaNefasto);
+  printf("\nLista apos remover a antena\n\n");
+  MostrarLista(ListaAntenasAux);
+
+  printf("\nEfeitos nefastos apos remover a antena\n\n");
+  MostrarListaNefasto(listaNefasto);
+  #pragma endregion
+
+  #pragma region Listagem_Tabular
+  //Listagem de forma tabular na consola das antenas e localizações com efeito nefasto.
+  char* tabela = CriarTabela(ListaAntenasAux, listaNefasto);
+    if (tabela) {
+        printf("%s", tabela);
+    } else {
+        printf("Erro ao criar a tabela.\n");
+    }
+  #pragma endregion
+
+  #pragma region Grava_E_Imprime_ListaAntena_Ficheiro_Bin
+  const char* ficheiro = "Ficheiros/Bin_mapaAntenas";
+
+  // Grava
+  if (GravarListaFicheiro(ListaAntenasAux, ficheiro)) {
+      printf("\nGravado com sucesso em '%s'\n", ficheiro);
+  } else {
+      printf("Erro ao gravar em '%s'\n", ficheiro);
+  }
+
+  // Lê
+  char* conteudo = LerListaFicheiro(ficheiro);
+  if (conteudo) {
+      printf("Conteúdo do ficheiro:\n%s", conteudo);
+      free(conteudo);
+  } else {
+      printf("Erro ao ler ficheiro '%s'\n", ficheiro);
+  }
+
   #pragma endregion
 
   #pragma region Limpar_Memorias
