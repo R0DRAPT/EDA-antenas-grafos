@@ -72,7 +72,7 @@ ListaEfeitoNefasto* RemoverEfeitosNefastos(ListaEfeitoNefasto* inicio, int x, in
 /**
  * @brief Cria uma tabela formatada com antenas e efeitos nefastos.
  */
-char* CriarTabela(Antenas* listaAntenas, ListaEfeitoNefasto* listaNefasto);
+bool ProximaLinhaTabular(Antenas** ant, ListaEfeitoNefasto** nef, char* freq, int* xAnt, int* yAnt, int* xNef, int* yNef);
 
 /**
  * @brief Grava a lista de antenas num ficheiro binário.

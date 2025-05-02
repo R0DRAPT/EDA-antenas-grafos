@@ -88,12 +88,28 @@
   #pragma endregion
 
   #pragma region Listagem_Tabular
-  //Listagem de forma tabular na consola das antenas e localizações com efeito nefasto.
-  char* tabela = CriarTabela(ListaAntenasAux, listaNefasto);
-    if (tabela) {
-        printf("%s", tabela);
-    } else {
-        printf("Erro ao criar a tabela.\n");
+    printf("\n\nLista Antenas         Efeitos Nefastos\n");
+    printf("--------------------- -------------------\n");
+    printf("Freq    X    Y        | X    Y\n");
+
+    Antenas* ant = ListaAntenasAux;
+    ListaEfeitoNefasto* nef = listaNefasto;
+
+    char freq;
+    int xA, yA, xN, yN;
+
+    while (ProximaLinhaTabular(&ant, &nef, &freq, &xA, &yA, &xN, &yN)) {
+        if (freq != '\0') {
+            printf(" %-6c %-4d %-4d     |", freq, xA, yA);
+        } else {
+            printf("                      |");
+        }
+
+        if (xN != 0 || yN != 0) {
+            printf(" %-4d %-4d\n", xN, yN);
+        } else {
+            printf("\n");
+        }
     }
   #pragma endregion
 
@@ -110,12 +126,11 @@
   // Lê
   char* conteudo = LerListaFicheiro(ficheiro);
   if (conteudo) {
-      printf("Conteúdo do ficheiro:\n%s", conteudo);
+      printf("Conteudo do ficheiro:\n%s", conteudo);
       free(conteudo);
   } else {
       printf("Erro ao ler ficheiro '%s'\n", ficheiro);
   }
-
   #pragma endregion
 
   #pragma region Limpar_Memorias

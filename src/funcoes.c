@@ -369,67 +369,45 @@ ListaEfeitoNefasto* RemoverEfeitosNefastos(ListaEfeitoNefasto* inicio, int x, in
 }
 
 /**
- * @brief Cria uma tabela formatada com antenas e efeitos nefastos.
- * 
- * Gera uma string com dados tabulares das antenas e dos efeitos nefastos.
- * A string é alocada dinamicamente e deve ser libertada com `free()`.
- * 
- * @param listaAntenas Ponteiro para a lista de antenas.
- * @param listaNefasto Ponteiro para a lista de efeitos nefastos.
- * @return char* String formatada ou NULL em caso de erro.
+ * @brief Avança simultaneamente nas listas de antenas e efeitos nefastos.
+ *
+ * A cada chamada, devolve os dados de uma linha para listagem tabular.
+ * Quando ambas as listas forem totalmente percorridas, retorna false.
+ *
+ * @param ant Ponteiro para ponteiro da lista de antenas.
+ * @param nef Ponteiro para ponteiro da lista de efeitos nefastos.
+ * @param freq Saída com a frequência da antena (ou '\0' se não houver).
+ * @param xAnt, yAnt Coordenadas da antena.
+ * @param xNef, yNef Coordenadas do efeito nefasto.
+ * @return true se ainda há dados, false se fim das listas.
  */
-char* CriarTabela(Antenas* listaAntenas, ListaEfeitoNefasto* listaNefasto) {
-    // Buffer inicial
-    size_t tamanho = 2048;
-    char* buffer = (char*)malloc(tamanho);
-    if (!buffer) return NULL;
-    buffer[0] = '\0';
+bool ProximaLinhaTabular(Antenas** ant, ListaEfeitoNefasto** nef, char* freq, int* xAnt, int* yAnt, int* xNef, int* yNef) {
+    bool temAntena = (*ant != NULL);
+    bool temEfeito = (*nef != NULL);
 
-    // Cabeçalho
-    strcat(buffer, "\n\nLista Antenas         Efeitos Nefastos\n");
-    strcat(buffer, "--------------------- -------------------\n");
-    strcat(buffer, "Freq    X    Y        | X    Y\n");
+    if (!temAntena && !temEfeito) return false;
 
-    Antenas* atualAntena = listaAntenas;
-    ListaEfeitoNefasto* atualEfeito = listaNefasto;
-    char linha[128];
-
-    while (atualAntena != NULL || atualEfeito != NULL) {
-        linha[0] = '\0';
-
-        // Antena
-        if (atualAntena != NULL) {
-            snprintf(linha + strlen(linha), sizeof(linha) - strlen(linha),
-                     " %-6c %-4d %-4d     |", atualAntena->freq, atualAntena->x, atualAntena->y);
-            atualAntena = atualAntena->prox;
-        } else {
-            strcat(linha, "                      |");
-        }
-
-        // Efeito nefasto
-        if (atualEfeito != NULL) {
-            snprintf(linha + strlen(linha), sizeof(linha) - strlen(linha),
-                     " %-4d %-4d\n", atualEfeito->x, atualEfeito->y);
-            atualEfeito = atualEfeito->prox;
-        } else {
-            strcat(linha, "\n");
-        }
-
-        // Se buffer precisar crescer
-        if (strlen(buffer) + strlen(linha) + 1 > tamanho) {
-            tamanho *= 2;
-            char* novo = realloc(buffer, tamanho);
-            if (!novo) {
-                free(buffer);
-                return NULL;
-            }
-            buffer = novo;
-        }
-
-        strcat(buffer, linha);
+    if (temAntena) {
+        *freq = (*ant)->freq;
+        *xAnt = (*ant)->x;
+        *yAnt = (*ant)->y;
+        *ant = (*ant)->prox;
+    } else {
+        *freq = '\0';
+        *xAnt = 0;
+        *yAnt = 0;
     }
 
-    return buffer;
+    if (temEfeito) {
+        *xNef = (*nef)->x;
+        *yNef = (*nef)->y;
+        *nef = (*nef)->prox;
+    } else {
+        *xNef = 0;
+        *yNef = 0;
+    }
+
+    return true;
 }
 
 /**
@@ -553,7 +531,7 @@ void MostrarListaNefasto(ListaEfeitoNefasto* inicio) {
 /**
  * @brief Liberta a memória alocada para a lista ligada de antenas.
  * 
- * Esta função percorre toda a lista ligada e liberta a memória ocupada por cada node.
+ * Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nodo.
  * 
  * @param inicio Ponteiro para o início da lista ligada de antenas.
  */
@@ -570,7 +548,7 @@ bool LimparMemoria(Antenas* inicio) {
 /**
  * @brief Liberta a memória alocada para a lista ligada do efeito nefasto.
  * 
- * Esta função percorre toda a lista ligada e liberta a memória ocupada por cada node.
+ * Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nodo.
  * 
  * @param inicio Ponteiro para o início da lista ligada do efeito nefasto.
  */
