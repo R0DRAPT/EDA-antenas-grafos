@@ -1,7 +1,7 @@
 /**
  * @file dados.h
  * @author Rodrigo Miranda (a31509@alunos.ipca.pt)
- * @brief Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa.
+ * @brief Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa. (Fase 1)
  * @version 0.1
  * @date 2025-03-18
  * 
@@ -47,15 +47,3 @@ typedef struct AntenasBin {
     int x, y; /**< Coordenadas X e Y da antena */
     char freq; /**< Frequência da antena representada por um carácter */
 } AntenasBin;
- 
-/**
- * @struct Grafos
- * @brief Estrutura que representa 
- * 
- * 
- */
-typedef struct Grafos {
-    
-
-    
-};

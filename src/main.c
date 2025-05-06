@@ -12,133 +12,157 @@
  #include <stdlib.h>
  #include <stdbool.h>
  #include "funcoes.h"
+ #include "funcoesFase2.h"
  
  /**
   * @brief Função principal do programa.
   *     
   */
  int main() {
-  #pragma region Declaração_Variaveis
-  // Ponteiros para listas ligadas de antenas
-  Antenas* listaAntenas = NULL; // Lista principal de antenas.
-  ListaEfeitoNefasto* listaNefasto = NULL; //Lista principal do efeito nefasto
-  Antenas* ListaAntenasAux = NULL; // Lista auxiliar
-  #pragma endregion
-  
-  #pragma region Lista_mapaAntena.txt
-  // Lista o mapa das antenas disponíveis
-  ListarMapaAntenas("Ficheiros/mapaAntenas.txt");
-  printf("\n");
-  #pragma endregion
+    //Fase 1
+    #pragma region Declaração_Variaveis
+    // Ponteiros para listas ligadas de antenas
+    Antenas* listaAntenas = NULL; // Lista principal de antenas.
+    ListaEfeitoNefasto* listaNefasto = NULL; //Lista principal do efeito nefasto
+    Antenas* ListaAntenasAux = NULL; // Lista auxiliar
+    #pragma endregion
+    
+    #pragma region Lista_mapaAntena.txt
+    // Lista o mapa das antenas disponíveis
+    ListarMapaAntenas("Ficheiros/mapaAntenas.txt");
+    printf("\n");
+    #pragma endregion
 
-  #pragma region Carrega_Antenas_Do_mapaAntena
-  // Carrega as antenas a partir de um ficheiro de texto
-  ListaAntenasAux = CarregarMapaAntenas("Ficheiros/mapaAntenas.txt");
-  if (ListaAntenasAux == NULL) {
-    return 1; // Retorna 1 em caso de erro.
-  }
-  #pragma endregion
-
-  #pragma region Cria_&_Insere_Antena
-  // Cria a antena e depois insere-a no inicio da lista ligada
-  printf("\n");
-  Antenas* a1 = CriarAntena('A', 2, 2);
-  ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, a1);
-
-  // Cria a antena e depois insere-a no fim da lista principal
-  Antenas* a2 = CriarAntena('C', 7, 7);
-  ListaAntenasAux = InserirAntenaFim(ListaAntenasAux, a2);
-
-  // Cria a antena e depois insere-a lista principal ordenadamente
-  Antenas* a3 = CriarAntena('H', 1, 1);
-  ListaAntenasAux = InserirAntenasOrdenado(ListaAntenasAux, a3);
-
-  MostrarLista(ListaAntenasAux);
-  #pragma endregion
-
-  #pragma region Modifica_Antena
-  //Modifica uma antena criada previamente
-  printf("\nAntena Modificada\n");
-  ListaAntenasAux = ModificarAntena(ListaAntenasAux, 7, 7, 'I', 3, 6);
-  #pragma endregion
-
-  #pragma region Calcular_Efeito_Nefasto
-  //Chama a funcao "EfeitoNefasto" onde e calculado o efeito nefasto das antenas na lista ligada
-  printf("\nEfeito nefasto calculado\n");
-  listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
-  printf("\n");
-  MostrarListaNefasto(listaNefasto);
-  #pragma endregion
-
-  #pragma region Remover_Antena
-  printf("\nRemover a Antena A - (2, 2)\n");
-  ListaAntenasAux = RemoverAntena(ListaAntenasAux, listaNefasto, 2, 2);
-
-  //Liberta a memória da lista de efeitos antiga
-  LimparMemoriaEfeito(listaNefasto);
-
-  //Volta a chamar a função "CalcularEfeitoNefasto" para voltar a calcular 
-  listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
-
-  printf("\nLista apos remover a antena\n\n");
-  MostrarLista(ListaAntenasAux);
-
-  printf("\nEfeitos nefastos apos remover a antena\n\n");
-  MostrarListaNefasto(listaNefasto);
-  #pragma endregion
-
-  #pragma region Listagem_Tabular
-    printf("\n\nLista Antenas         Efeitos Nefastos\n");
-    printf("--------------------- -------------------\n");
-    printf("Freq    X    Y        | X    Y\n");
-
-    Antenas* ant = ListaAntenasAux;
-    ListaEfeitoNefasto* nef = listaNefasto;
-
-    char freq;
-    int xA, yA, xN, yN;
-
-    while (ProximaLinhaTabular(&ant, &nef, &freq, &xA, &yA, &xN, &yN)) {
-        if (freq != '\0') {
-            printf(" %-6c %-4d %-4d     |", freq, xA, yA);
-        } else {
-            printf("                      |");
-        }
-
-        if (xN != 0 || yN != 0) {
-            printf(" %-4d %-4d\n", xN, yN);
-        } else {
-            printf("\n");
-        }
+    #pragma region Carrega_Antenas_Do_mapaAntena
+    // Carrega as antenas a partir de um ficheiro de texto
+    ListaAntenasAux = CarregarMapaAntenas("Ficheiros/mapaAntenas.txt");
+    if (ListaAntenasAux == NULL) {
+        return 1; // Retorna 1 em caso de erro.
     }
-  #pragma endregion
+    #pragma endregion
 
-  #pragma region Grava_E_Imprime_ListaAntena_Ficheiro_Bin
-  const char* ficheiro = "Ficheiros/Bin_mapaAntenas";
+    #pragma region Cria_&_Insere_Antena
+    // Cria a antena e depois insere-a no inicio da lista ligada
+    printf("\n");
+    Antenas* a1 = CriarAntena('A', 2, 2);
+    ListaAntenasAux = InserirAntenaInicio(ListaAntenasAux, a1);
 
-  // Grava
-  if (GravarListaFicheiro(ListaAntenasAux, ficheiro)) {
-      printf("\nGravado com sucesso em '%s'\n", ficheiro);
-  } else {
-      printf("Erro ao gravar em '%s'\n", ficheiro);
-  }
+    // Cria a antena e depois insere-a no fim da lista principal
+    Antenas* a2 = CriarAntena('C', 7, 7);
+    ListaAntenasAux = InserirAntenaFim(ListaAntenasAux, a2);
 
-  // Lê
-  char* conteudo = LerListaFicheiro(ficheiro);
-  if (conteudo) {
-      printf("Conteudo do ficheiro:\n%s", conteudo);
-      free(conteudo);
-  } else {
-      printf("Erro ao ler ficheiro '%s'\n", ficheiro);
-  }
-  #pragma endregion
+    // Cria a antena e depois insere-a lista principal ordenadamente
+    Antenas* a3 = CriarAntena('H', 1, 1);
+    ListaAntenasAux = InserirAntenasOrdenado(ListaAntenasAux, a3);
 
-  #pragma region Limpar_Memorias
-  // Liberta a memória alocada da lista ligada de antenas
-  LimparMemoria(ListaAntenasAux);
-  // Liberta a memória alocada da lista ligada do efeito nefasto
-  LimparMemoriaEfeito(listaNefasto);
-  #pragma endregion
+    MostrarLista(ListaAntenasAux);
+    #pragma endregion
 
-  return 0; // Retorna 0 em caso de sucesso.
+    #pragma region Modifica_Antena
+    //Modifica uma antena criada previamente
+    printf("\nAntena Modificada\n");
+    ListaAntenasAux = ModificarAntena(ListaAntenasAux, 7, 7, 'I', 3, 6);
+    #pragma endregion
+
+    #pragma region Calcular_Efeito_Nefasto
+    //Chama a funcao "EfeitoNefasto" onde e calculado o efeito nefasto das antenas na lista ligada
+    printf("\nEfeito nefasto calculado\n");
+    listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
+    printf("\n");
+    MostrarListaNefasto(listaNefasto);
+    #pragma endregion
+
+    #pragma region Remover_Antena
+    printf("\nRemover a Antena A - (2, 2)\n");
+    ListaAntenasAux = RemoverAntena(ListaAntenasAux, listaNefasto, 2, 2);
+
+    //Liberta a memória da lista de efeitos antiga
+    LimparMemoriaEfeito(listaNefasto);
+
+    //Volta a chamar a função "CalcularEfeitoNefasto" para voltar a calcular 
+    listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
+
+    printf("\nLista apos remover a antena\n\n");
+    MostrarLista(ListaAntenasAux);
+
+    printf("\nEfeitos nefastos apos remover a antena\n\n");
+    MostrarListaNefasto(listaNefasto);
+    #pragma endregion
+
+    #pragma region Listagem_Tabular
+        printf("\n\nLista Antenas         Efeitos Nefastos\n");
+        printf("--------------------- -------------------\n");
+        printf("Freq    X    Y        | X    Y\n");
+
+        Antenas* ant = ListaAntenasAux;
+        ListaEfeitoNefasto* nef = listaNefasto;
+
+        char freq;
+        int xA, yA, xN, yN;
+
+        while (ProximaLinhaTabular(&ant, &nef, &freq, &xA, &yA, &xN, &yN)) {
+            if (freq != '\0') {
+                printf(" %-6c %-4d %-4d     |", freq, xA, yA);
+            } else {
+                printf("                      |");
+            }
+
+            if (xN != 0 || yN != 0) {
+                printf(" %-4d %-4d\n", xN, yN);
+            } else {
+                printf("\n");
+            }
+        }
+    #pragma endregion
+
+    #pragma region Grava_E_Imprime_ListaAntena_Ficheiro_Bin
+    const char* ficheiro = "Ficheiros/Bin_mapaAntenas";
+
+    // Grava
+    if (GravarListaFicheiro(ListaAntenasAux, ficheiro)) {
+        printf("\nGravado com sucesso em '%s'\n", ficheiro);
+    } else {
+        printf("Erro ao gravar em '%s'\n", ficheiro);
+    }
+
+    // Lê
+    char* conteudo = LerListaFicheiro(ficheiro);
+    if (conteudo) {
+        printf("Conteudo do ficheiro:\n%s", conteudo);
+        free(conteudo);
+    } else {
+        printf("Erro ao ler ficheiro '%s'\n", ficheiro);
+    }
+    #pragma endregion
+
+    printf("\n----------------------------------------------\n\n");
+    //Fase 2
+
+    #pragma region Declaração_Variaveis
+    // Ponteiros para listas ligadas de antenas
+    Grafos* listaGrafos = NULL; // Lista principal de antenas.
+    Grafos* ListaGrafosAux = NULL; // Lista auxiliar 
+    #pragma endregion
+
+    #pragma region Lista_mapaGrafos.txt
+    // Lista o mapa das antenas disponíveis
+    ListarMapaGrafos("Ficheiros/mapaGrafos.txt");
+    printf("\n\n");
+    #pragma endregion
+
+    #pragma region
+
+    
+
+    #pragma endregion
+
+
+    #pragma region Limpar_Memorias
+    // Liberta a memória alocada da lista ligada de antenas
+    LimparMemoria(ListaAntenasAux);
+    // Liberta a memória alocada da lista ligada do efeito nefasto
+    LimparMemoriaEfeito(listaNefasto);
+    #pragma endregion
+
+    return 0; // Retorna 0 em caso de sucesso.
 }

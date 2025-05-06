@@ -8,8 +8,8 @@ CC = gcc
 EXEC = programa
 
 # Arquivos fonte e objetos
-SRCS = main.c funcoes.c
-OBJS = main.o funcoes.o
+SRCS = main.c funcoes.c funcoesFase2.c
+OBJS = main.o funcoes.o funcoesFase2.o
 
 # Regra principal: compilar e rodar
 run: $(EXEC)

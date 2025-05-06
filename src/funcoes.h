@@ -1,7 +1,7 @@
 /**
  * @file funcoes.h
  * @author Rodrigo Miranda (a31509@alunos.ipca.pt)
- * @brief Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em funcoes.c
+ * @brief Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em funcoes.c (Fase 1)
  * @version 0.1
  * @date 2025-03-18
  * 
@@ -9,7 +9,8 @@
  * 
  */
 
- #include "dados.h"
+#include "dados.h"
+#include <stdbool.h>
 
  #ifndef FUNCOES_H //Include Guard - evita inclusões múltiplas do mesmo cabeçalho durante a compilação.
  #define FUNCOES_H
@@ -84,14 +85,6 @@ bool GravarListaFicheiro(Antenas* inicio, const char* nomeFicheiro);
  */
 char* LerListaFicheiro(const char* nomeFicheiro);
 
-
-
-
-
-void MostrarLista(Antenas* inicio);
-
-void MostrarListaNefasto(ListaEfeitoNefasto* inicio);
-
 /**
  * @brief Liberta a memória alocada para a lista ligada de antenas.
  */
@@ -101,4 +94,10 @@ bool LimparMemoria(Antenas* inicio);
  * @brief Liberta a memória alocada para a lista ligada do efeito nefasto.
  */
 bool LimparMemoriaEfeito(ListaEfeitoNefasto* lista);
+
+void MostrarLista(Antenas* inicio);
+
+void MostrarListaNefasto(ListaEfeitoNefasto* inicio);
+
+
 #endif

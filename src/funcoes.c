@@ -1,7 +1,7 @@
 /**
  * @file funcoes.c
  * @author Rodrigo Miranda (a31509@alunos.ipca.pt)
- * @brief Ficheiro de implementação das funções utilizadas no programa. Contém a lógica das operações definidas em funcoes.h
+ * @brief Ficheiro de implementação das funções utilizadas no programa, Contém a lógica das operações definidas em funcoes.h (Fase 1)
  * @version 0.1
  * @date 2025-03-18
  * 
@@ -467,7 +467,7 @@ char* LerListaFicheiro(const char* nomeFicheiro) {
     char linha[64];
 
     while (fread(&elemento, sizeof(AntenasBin), 1, fp) == 1) {
-        snprintf(linha, sizeof(linha), "%c - (%d, %d)\n", elemento.freq, elemento.x, elemento.y);
+        snprintf(linha, sizeof(linha), "%c - (%d, %d)\n", elemento.freq, elemento.x, elemento.y); //Formata e armazena caracteres no buffer
 
         // Expande buffer se necessário
         if (strlen(buffer) + strlen(linha) + 1 > tamanho) {
@@ -487,11 +487,6 @@ char* LerListaFicheiro(const char* nomeFicheiro) {
     fclose(fp);
     return buffer;
 }
-
-
-
-
-
 
 
 
@@ -528,6 +523,8 @@ void MostrarListaNefasto(ListaEfeitoNefasto* inicio) {
     }
 }
 
+
+
 /**
  * @brief Liberta a memória alocada para a lista ligada de antenas.
  * 
@@ -560,4 +557,3 @@ bool LimparMemoriaEfeito(ListaEfeitoNefasto* lista) {
     }
     return true;
 }
-
