@@ -17,6 +17,7 @@
  */
 typedef struct Arestas {
     struct Vertices* destino;      /**< Apontador para o vértice de destino (antena ligada). */
+    struct Vertices* origem;       /**< Apontador para o vértice de origem (antena ligada). */
     struct Arestas* prox;          /**< Apontador para a próxima aresta na lista de adjacencias. */
 } Arestas;
 
@@ -25,7 +26,7 @@ typedef struct Arestas {
  * @brief Estrutura que representa uma antena no grafo.
  */
 typedef struct Vertices {
-    char frequencia;              /**< Frequência da antena */
+    char freq;              /**< Frequência da antena */
     int x, y;                     /**< Coordenadas X e Y da antena */
     Arestas* adjacencias;          /**< Lista de arestas que ligam a antenas com a mesma frequência. */
     struct Vertices* prox;         /**< Apontador para o próximo vértice na lista ligada. */

@@ -19,7 +19,7 @@
   *     
   */
  int main() {
-    //Fase 1
+    #pragma region Fase_1
     #pragma region Declaração_Variaveis
     // Ponteiros para listas ligadas de antenas
     Antenas* listaAntenas = NULL; // Lista principal de antenas.
@@ -136,25 +136,59 @@
     #pragma endregion
 
     printf("\n----------------------------------------------\n\n");
+    #pragma endregion
+    
     //Fase 2
-
     #pragma region Declaração_Variaveis
-    // Ponteiros para listas ligadas de antenas
-    Grafos* listaGrafos = NULL; // Lista principal de antenas.
+    // Ponteiros para listas ligadas
+    Grafos* listaGrafos = NULL; // Lista principal.
     Grafos* ListaGrafosAux = NULL; // Lista auxiliar 
+    Vertices* ListaVerticesAux = NULL; //Lista Vertices
     #pragma endregion
 
-    #pragma region Lista_mapaGrafos.txt
+    #pragma region Lista_mapaVertices.txt
     // Lista o mapa das antenas disponíveis
-    ListarMapaGrafos("Ficheiros/mapaGrafos.txt");
+    ListarMapaVertices("Ficheiros/mapaVertices.txt");
     printf("\n\n");
     #pragma endregion
 
-    #pragma region
-
-    
-
+    #pragma region Carrega_Verticies_Do_mapaGrafo
+    // Carrega os verticies a partir de um ficheiro de texto
+    ListaVerticesAux = CarregarMapaVertices("Ficheiros/mapaVertices.txt");
+    if (ListaVerticesAux == NULL) {
+        return 1; // Retorna 1 em caso de erro.
+    }
     #pragma endregion
+
+    #pragma region Cria_&_Insere_Verticies
+    // Cria o vertice e depois insere-o no inicio da lista ligada
+    Vertices* g1 = CriarVertice('A', 2, 2);
+    ListaVerticesAux = InserirVerticeInicio(ListaVerticesAux, g1);
+
+    // Cria o vertice e depois insere-o no fim da lista principal
+    Vertices* g2 = CriarVertice('C', 7, 7);
+    ListaVerticesAux = InserirVerticeFim(ListaVerticesAux, g2);
+
+    // Cria o vertice e depois insere-o lista principal ordenadamente
+    Vertices* g3 = CriarVertice('H', 1, 1);
+    ListaVerticesAux = InserirVerticeOrdenado(ListaVerticesAux, g3);
+
+    MostrarListaVertices(ListaVerticesAux);
+    #pragma endregion
+
+    #pragma region Cria_&_Insere_Arestas
+    // Cria adjacencias bidirecionais entre vértices com a mesma frequência
+    if (CriarArestasMesmoFreq(ListaVerticesAux)) {
+        printf("\nAdjacencias criadas com sucesso entre vertices com mesma frequencia.\n");
+    } else {
+        printf("\nErro ao criar as adjacencias.\n");
+    }
+
+    // Mostra os vértices com suas adjacências
+    printf("\nLista de vertices com suas adjacencias:\n");
+    MostrarAdjacencias(ListaVerticesAux);
+    #pragma endregion
+
 
 
     #pragma region Limpar_Memorias

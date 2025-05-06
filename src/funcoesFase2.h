@@ -17,9 +17,50 @@
 #define FUNCOESFASE2_H
 
 /** 
-  * @brief Lê o ficheiro "mapaGrafos.txt" e imprime o seu conteúdo no terminal.
+  * @brief Lê o ficheiro "mapaVertices.txt" e imprime o seu conteúdo no terminal.
 */
-Grafos* ListarMapaGrafos(const char *nomeFicheiro);
+Vertices* ListarMapaVertices(const char *nomeFicheiro);
+
+/**
+ * @brief Cria um novo vértice com os dados fornecidos.
+ */
+Vertices* CriarVertice(char freq, int x, int y);
+
+/**
+ * @brief Insere uma antena no início da lista ligada.
+ */
+Vertices* InserirVerticeInicio(Vertices* inicio, Vertices* nova);
+
+/**
+ * @brief Insere um vertice no final da lista ligada.
+ */
+Vertices* InserirVerticeFim(Vertices* inicio, Vertices* nova);
+
+/**
+ * @brief Insere um vertice na lista ligada de forma ordenada pelas coordenadas (x, y).
+ */
+Vertices* InserirVerticeOrdenado(Vertices* inicio, Vertices* nova);
+
+/**
+ * @brief Carrega os verticies do ficheiro "mapaVertices.txt" para uma lista ligada.
+ */
+Vertices* CarregarMapaVertices(const char *nomeFicheiro);
+
+/**
+ * @brief Cria uma nova aresta com os dados fornecidos.
+ */
+Arestas* CriarAresta(Vertices* origem, Vertices* destino);
+
+/**
+ * @brief Insere uma aresta na lista de adjacências do vértice de origem.
+ */
+bool InserirAresta(Vertices* origem, Vertices* destino);
+
+/**
+ * @brief Cria arestas bidirecionais entre vértices da mesma frequência.
+ */
+bool CriarArestasMesmoFreq(Vertices* lista);
+
 
 
 
@@ -29,6 +70,8 @@ Grafos* ListarMapaGrafos(const char *nomeFicheiro);
  */
 bool LimparMemoriaGrafos(Grafos* grafo);
 
+void MostrarListaVertices(Vertices* inicio);
 
+void MostrarAdjacencias(Vertices* lista);
 
 #endif
