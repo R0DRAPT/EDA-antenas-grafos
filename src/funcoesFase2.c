@@ -228,7 +228,132 @@ bool CriarArestasMesmoFreq(Vertices* lista) {
     return true;
 }
 
+/**
+ * @brief Cria uma estrutura de grafo a partir da lista de vértices existente.
+ * 
+ * @param listaVertices Lista ligada de vértices já com as arestas inseridas.
+ * @return Grafos* Ponteiro para a estrutura do grafo criada.
+ */
+Grafos* CriarGrafo(Vertices* listaVertices) {
+    Grafos* novoGrafo = (Grafos*)malloc(sizeof(Grafos));
+    if (novoGrafo == NULL) return NULL;
 
+    novoGrafo->listaVertices = listaVertices;
+
+    // Contadores auxiliares
+    int totalVertices = 0;
+    int totalArestas = 0;
+
+    Vertices* atual = listaVertices;
+    while (atual != NULL) {
+        totalVertices++;
+
+        Arestas* a = atual->adjacencias;
+        while (a != NULL) {
+            totalArestas++;
+            a = a->prox;
+        }
+
+        atual = atual->prox;
+    }
+
+    novoGrafo->numVertices = totalVertices;
+    novoGrafo->numArestas = totalArestas / 2;
+
+    return novoGrafo;
+}
+
+/**
+ * @brief Procura um vértice com coordenadas (x, y) numa lista ligada de vértices.
+ * 
+ * Esta função percorre a lista de vértices e retorna o ponteiro para o vértice
+ * que possui as coordenadas indicadas. Se não for encontrado nenhum vértice
+ * com essas coordenadas, a função retorna NULL.
+ * 
+ * @param lista Ponteiro para o início da lista ligada de vértices.
+ * @param x Coordenada X a procurar.
+ * @param y Coordenada Y a procurar.
+ * @return Vertices* Ponteiro para o vértice encontrado, ou NULL se não for encontrado.
+ */
+Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y) {
+    while (lista != NULL) {
+        if (lista->x == x && lista->y == y) {
+            return lista;
+        }
+        lista = lista->prox;
+    }
+    return NULL;
+}
+
+/**
+ * @brief Adiciona um vértice à lista de visitados.
+ * 
+ * Esta função aloca memória para um novo elemento da lista de visitados
+ * e insere o vértice dado no início da lista.
+ * 
+ * @param lista Ponteiro para a lista atual de vértices visitados.
+ * @param v Ponteiro para o vértice a ser adicionado.
+ * @return Visitados* Ponteiro para o início atualizado da lista de visitados.
+ */
+Visitados* AdicionarVisitado(Visitados* lista, Vertices* v) {
+    Visitados* novo = malloc(sizeof(Visitados));
+    if (novo == NULL) return lista;
+
+    novo->vertice = v;
+    novo->prox = lista;
+    return novo;
+}
+
+/**
+ * @brief Realiza uma procura em profundidade recursiva a partir de um vértice.
+ * 
+ * Esta função marca o vértice como visitado, adiciona-o à lista de visitados
+ * e continua a procura recursivamente para todos os seus vértices adjacentes.
+ * 
+ * @param v Ponteiro para o vértice atual.
+ * @param visitados Ponteiro para a lista de vértices visitados.
+ * @return Visitados* Lista atualizada de vértices visitados após a procura.
+ */
+Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados) {
+    if (v == NULL || v->visitado) return visitados;
+
+    v->visitado = true;
+    visitados = AdicionarVisitado(visitados, v);
+
+    Arestas* atual = v->adjacencias;
+    while (atual != NULL) {
+        visitados = ProcuraRecursiva(atual->destino, visitados);
+        atual = atual->prox;
+    }
+
+    return visitados;
+}
+
+/**
+ * @brief Inicia uma procura em profundidade (DFS) a partir de um vértice com coordenadas específicas.
+ * 
+ * Esta função reinicia o estado de todos os vértices como não visitados, 
+ * encontra o vértice de origem com as coordenadas fornecidas e inicia a 
+ * procura em profundidade recursiva a partir dele.
+ * 
+ * @param listaVertices Ponteiro para o início da lista de vértices do grafo.
+ * @param x Coordenada X do vértice de origem.
+ * @param y Coordenada Y do vértice de origem.
+ * @return Visitados* Lista de vértices visitados durante a procura em profundidade, ou NULL se o vértice de origem não for encontrado.
+ */
+Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y) {
+    // Visitado = 0 (reinicia os visitados)
+    Vertices* temp = listaVertices;
+    while (temp != NULL) {
+        temp->visitado = false;
+        temp = temp->prox;
+    }
+
+    Vertices* origem = EncontrarVerticePorCoordenadas(listaVertices, x, y);
+    if (origem == NULL) return NULL;
+
+    return ProcuraRecursiva(origem, NULL);
+}
 
 
 
@@ -259,7 +384,6 @@ bool LimparMemoriaGrafos(Grafos* grafo) {
     free(grafo);
     return true;
 }
-
 
 
 void MostrarListaVertices(Vertices* inicio) {
@@ -300,6 +424,7 @@ void MostrarAdjacencias(Vertices* lista) {
         printf("\n");
         atual = atual->prox;
     }
+    printf("\n\n");
 }
 
 

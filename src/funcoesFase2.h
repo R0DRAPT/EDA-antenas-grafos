@@ -42,7 +42,7 @@ Vertices* InserirVerticeFim(Vertices* inicio, Vertices* nova);
 Vertices* InserirVerticeOrdenado(Vertices* inicio, Vertices* nova);
 
 /**
- * @brief Carrega os verticies do ficheiro "mapaVertices.txt" para uma lista ligada.
+ * @brief Carrega os vertices do ficheiro "mapaVertices.txt" para uma lista ligada.
  */
 Vertices* CarregarMapaVertices(const char *nomeFicheiro);
 
@@ -61,8 +61,30 @@ bool InserirAresta(Vertices* origem, Vertices* destino);
  */
 bool CriarArestasMesmoFreq(Vertices* lista);
 
+/**
+ * @brief Cria uma estrutura de grafo a partir da lista de vértices existente.
+ */
+Grafos* CriarGrafo(Vertices* listaVertices);
 
+/**
+ * @brief * @brief Procura um vértice com coordenadas (x, y) numa lista ligada de vértices.
+ */
+Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y);
 
+/**
+ * @brief Adiciona um vértice à lista de visitados.
+ */
+Visitados* AdicionarVisitado(Visitados* lista, Vertices* v);
+
+/**
+ * @brief Realiza uma procura em profundidade recursiva a partir de um vértice.
+ */
+Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados);
+
+/**
+ * @brief Inicia uma procura em profundidade (DFS) a partir de um vértice com coordenadas específicas.
+ */
+Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y);
 
 
 /**

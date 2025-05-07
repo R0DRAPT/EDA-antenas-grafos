@@ -152,15 +152,15 @@
     printf("\n\n");
     #pragma endregion
 
-    #pragma region Carrega_Verticies_Do_mapaGrafo
-    // Carrega os verticies a partir de um ficheiro de texto
+    #pragma region Carrega_Vertices_Do_mapaGrafo
+    // Carrega os vertices a partir de um ficheiro de texto
     ListaVerticesAux = CarregarMapaVertices("Ficheiros/mapaVertices.txt");
     if (ListaVerticesAux == NULL) {
         return 1; // Retorna 1 em caso de erro.
     }
     #pragma endregion
 
-    #pragma region Cria_&_Insere_Verticies
+    #pragma region Cria_&_Insere_Vertices
     // Cria o vertice e depois insere-o no inicio da lista ligada
     Vertices* g1 = CriarVertice('A', 2, 2);
     ListaVerticesAux = InserirVerticeInicio(ListaVerticesAux, g1);
@@ -189,7 +189,34 @@
     MostrarAdjacencias(ListaVerticesAux);
     #pragma endregion
 
+    #pragma region Criar_Grafo
+    if (ListaVerticesAux == NULL) {
+        printf("Erro: Lista de vértices vazia.\n");
+        return 1;
+    }
 
+    Grafos* grafoFinal = CriarGrafo(ListaVerticesAux);
+    if (grafoFinal != NULL) {
+        printf("Grafo criado com %d vértices e %d arestas.\n", grafoFinal->numVertices, grafoFinal->numArestas);
+    }
+    #pragma endregion
+
+    #pragma region Procura_Em_Profundidade
+    if (ListaVerticesAux == NULL) {
+        printf("Erro: Lista de vértices vazia.\n");
+        return 1;
+    }
+
+    Visitados* resultado = ProcuraProfundidade(ListaVerticesAux, 3, 7);
+    Visitados* aux = resultado;
+
+    printf("\n");
+    while (aux != NULL) {
+        printf("Visitado: %c (%d, %d)\n", aux->vertice->freq, aux->vertice->x, aux->vertice->y);
+        aux = aux->prox;
+    }
+    printf("\n");
+    #pragma endregion
 
     #pragma region Limpar_Memorias
     // Liberta a memória alocada da lista ligada de antenas
@@ -198,5 +225,5 @@
     LimparMemoriaEfeito(listaNefasto);
     #pragma endregion
 
-    return 0; // Retorna 0 em caso de sucesso.
+    return 0; 
 }

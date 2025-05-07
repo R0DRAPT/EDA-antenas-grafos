@@ -26,16 +26,29 @@ typedef struct Arestas {
  * @brief Estrutura que representa uma antena no grafo.
  */
 typedef struct Vertices {
-    char freq;              /**< Frequência da antena */
-    int x, y;                     /**< Coordenadas X e Y da antena */
-    Arestas* adjacencias;          /**< Lista de arestas que ligam a antenas com a mesma frequência. */
-    struct Vertices* prox;         /**< Apontador para o próximo vértice na lista ligada. */
+    char freq;                      /**< Frequência da antena */
+    int x, y;                       /**< Coordenadas X e Y da antena */
+    bool visitado;                  /**< Verifica se o vertico ja foi visitado */
+    Arestas* adjacencias;           /**< Lista de arestas que ligam a antenas com a mesma frequência. */
+    struct Vertices* prox;          /**< Apontador para o próximo vértice na lista ligada. */
 } Vertices;
 
 /**
  * @struct Grafos
- * @brief Estrutura principal que representa a cidade como um grafo de antenas.
+ * @brief Estrutura principal de um grafo, contendo os vértices e suas conexões.
  */
 typedef struct Grafos {
-    Vertices* listaVertices;       /**< Lista ligada de vértices (antenas) presentes na cidade. */
+    Vertices* listaVertices;    /**< Lista ligada de vértices (antenas) presentes na cidade. */
+    int numVertices;            /**< Número total de vértices no grafo. */
+    int numArestas;             /**< Número total de arestas no grafo. */
 } Grafos;
+
+/**
+ * @struct Visitados
+ * @brief Estrutura que reprenta os vertices visitados 
+ */
+typedef struct Visitados {
+    Vertices* vertice;
+    struct Visitados* prox;
+} Visitados;
+
