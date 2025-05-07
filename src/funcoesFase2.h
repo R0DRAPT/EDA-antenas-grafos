@@ -72,7 +72,7 @@ Grafos* CriarGrafo(Vertices* listaVertices);
 Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y);
 
 /**
- * @brief Adiciona um vértice à lista de visitados.
+ * @brief Adiciona um vértice no final da lista de visitados.
  */
 Visitados* AdicionarVisitado(Visitados* lista, Vertices* v);
 
@@ -86,6 +86,8 @@ Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados);
  */
 Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y);
 
+
+Visitados* ProcuraLargura(Vertices* listaVertices, int x, int y);
 
 /**
  * @brief Liberta a memória alocada para a lista ligada dos grafos

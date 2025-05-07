@@ -218,6 +218,16 @@
     printf("\n");
     #pragma endregion
 
+    #pragma region Procura_Em_Largura 
+    Visitados* resultadoLargura = ProcuraLargura(ListaVerticesAux, 2, 2);
+    Visitados* temp = resultadoLargura;
+    
+    while (temp != NULL) {
+        printf("Antena alcançada: (%d, %d)\n", temp->vertice->x, temp->vertice->y);
+        temp = temp->prox;
+    }
+    #pragma endregion
+
     #pragma region Limpar_Memorias
     // Liberta a memória alocada da lista ligada de antenas
     LimparMemoria(ListaAntenasAux);

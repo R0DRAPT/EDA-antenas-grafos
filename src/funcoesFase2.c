@@ -286,10 +286,10 @@ Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y) {
 }
 
 /**
- * @brief Adiciona um vértice à lista de visitados.
+ * @brief Adiciona um vértice no final da lista de visitados.
  * 
  * Esta função aloca memória para um novo elemento da lista de visitados
- * e insere o vértice dado no início da lista.
+ * e insere o vértice dado no fim da lista.
  * 
  * @param lista Ponteiro para a lista atual de vértices visitados.
  * @param v Ponteiro para o vértice a ser adicionado.
@@ -300,8 +300,18 @@ Visitados* AdicionarVisitado(Visitados* lista, Vertices* v) {
     if (novo == NULL) return lista;
 
     novo->vertice = v;
-    novo->prox = lista;
-    return novo;
+    novo->prox = NULL;
+
+    if (lista == NULL) {
+        return novo;
+    } else {
+        Visitados* temp = lista;
+        while (temp->prox != NULL) {
+            temp = temp->prox;
+        }
+        temp->prox = novo;
+        return lista;
+    }
 }
 
 /**
@@ -354,6 +364,61 @@ Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y) {
 
     return ProcuraRecursiva(origem, NULL);
 }
+
+/**
+ * @brief Realiza uma procura em largura (BFS) a partir de um vértice com coordenadas (x, y).
+ * 
+ * Reinicia os vértices como não visitados, encontra o vértice de origem e executa BFS,
+ * retornando uma lista de vértices visitados na ordem em que foram alcançados.
+ * 
+ * @param listaVertices Ponteiro para a lista de todos os vértices do grafo.
+ * @param x Coordenada X do vértice de origem.
+ * @param y Coordenada Y do vértice de origem.
+ * @return Visitados* Lista de vértices visitados durante a procura em largura.
+ */
+Visitados* ProcuraLargura(Vertices* listaVertices, int x, int y) {
+    // Visitado = 0 (reinicia os visitados)
+    Vertices* temp = listaVertices;
+    while (temp != NULL) {
+        temp->visitado = false;
+        temp = temp->prox;
+    }
+
+    Vertices* origem = EncontrarVerticePorCoordenadas(listaVertices, x, y);
+    if (origem == NULL) return NULL;
+
+    // Inicializa a fila
+    Vertices** fila = malloc(sizeof(Vertices*) * 1000); // Vertices** (Apontador para um array de apontadores para vertices)
+    int inicio = 0, fim = 0;
+    // fila armazena até 1000 ponteiros para 'vertices', que estes apontam para vertices diferentes
+
+    Visitados* visitados = NULL;
+
+    origem->visitado = true;
+    fila[fim++] = origem;
+
+    while (inicio < fim) {
+        Vertices* atual = fila[inicio++];
+
+        visitados = AdicionarVisitado(visitados, atual);
+
+        Arestas* adj = atual->adjacencias;
+        while (adj != NULL) {
+            Vertices* destino = adj->destino;
+            if (!destino->visitado) {
+                destino->visitado = true;
+                fila[fim++] = destino;
+            }
+            adj = adj->prox;
+        }
+    }
+
+    free(fila);
+    return visitados;
+}
+
+
+
 
 
 
