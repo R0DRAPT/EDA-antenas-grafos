@@ -42,7 +42,7 @@ Vertices* ListarMapaVertices(const char *nomeFicheiro) {
  * @param freq Carácter que representa a frequência do vertice.
  * @param x Coordenada X do vertice.
  * @param y Coordenada Y do vertice.
- * @return Vertices* Ponteiro para o novo vértice criado ou NULL em caso de falha.
+ * @return Vertices* Apontador para o novo vértice criado ou NULL em caso de falha.
  */
 Vertices* CriarVertice(char freq, int x, int y) {
     Vertices* novo = (Vertices*)malloc(sizeof(Vertices));
@@ -62,9 +62,9 @@ Vertices* CriarVertice(char freq, int x, int y) {
 /**
  * @brief Insere um vertice no início da lista ligada.
  * 
- * @param inicio Ponteiro para o início da lista ligada.
- * @param nova Ponteiro para o novo vertice a ser inserido.
- * @return Vertices* Ponteiro atualizado para o início da lista.
+ * @param inicio Apontador para o início da lista ligada.
+ * @param nova Apontador para o novo vertice a ser inserido.
+ * @return Vertices* Apontador atualizado para o início da lista.
  */
 Vertices* InserirVerticeInicio(Vertices* inicio, Vertices* nova) {
     if (nova == NULL) return inicio;
@@ -76,9 +76,9 @@ Vertices* InserirVerticeInicio(Vertices* inicio, Vertices* nova) {
 /**
  * @brief Insere um verticie no final da lista ligada.
  * 
- * @param inicio Ponteiro para o início da lista ligada.
- * @param nova Ponteiro para o novo vertice a ser inserido.
- * @return Vertices* Ponteiro para o início da lista após inserção.
+ * @param inicio Apontador para o início da lista ligada.
+ * @param nova Apontador para o novo vertice a ser inserido.
+ * @return Vertices* Apontador para o início da lista após inserção.
  */
 Vertices* InserirVerticeFim(Vertices* inicio, Vertices* nova) {
     if (nova == NULL) return inicio;
@@ -101,9 +101,9 @@ Vertices* InserirVerticeFim(Vertices* inicio, Vertices* nova) {
 /**
  * @brief Insere um vertice na lista ligada de forma ordenada pelas coordenadas (x, y).
  * 
- * @param inicio Ponteiro para o início da lista ligada.
- * @param nova Ponteiro para o novo vertice a ser inserido.
- * @return Vertices* Ponteiro para o início da lista atualizada.
+ * @param inicio Apontador para o início da lista ligada.
+ * @param nova Apontador para o novo vertice a ser inserido.
+ * @return Vertices* Apontador para o início da lista atualizada.
  */
 Vertices* InserirVerticeOrdenado(Vertices* inicio, Vertices* nova) {
     if (nova == NULL) return inicio;
@@ -170,11 +170,11 @@ Vertices* CarregarMapaVertices(const char *nomeFicheiro) {
  * @brief Cria uma nova aresta entre dois vértices.
  * 
  * Aloca dinamicamente uma nova estrutura de aresta que liga um vértice de origem
- * a um vértice de destino. Retorna um ponteiro para a nova aresta criada.
+ * a um vértice de destino. Retorna um Apontador para a nova aresta criada.
  * 
- * @param origem Ponteiro para o vértice de origem.
- * @param destino Ponteiro para o vértice de destino.
- * @return Arestas* Ponteiro para a nova aresta criada, ou NULL em caso de erro de alocação.
+ * @param origem Apontador para o vértice de origem.
+ * @param destino Apontador para o vértice de destino.
+ * @return Arestas* Apontador para a nova aresta criada, ou NULL em caso de erro de alocação.
  */
 Arestas* CriarAresta(Vertices* origem, Vertices* destino) {
     Arestas* nova = (Arestas*)malloc(sizeof(Arestas));
@@ -190,8 +190,8 @@ Arestas* CriarAresta(Vertices* origem, Vertices* destino) {
 /**
  * @brief Insere uma aresta na lista de adjacências do vértice de origem.
  * 
- * @param origem Ponteiro para o vértice de origem.
- * @param destino Ponteiro para o vértice de destino.
+ * @param origem Apontador para o vértice de origem.
+ * @param destino Apontador para o vértice de destino.
  * @return true se a inserção foi bem-sucedida, false em caso de erro (ex: alocação falhou).
  */
 bool InserirAresta(Vertices* origem, Vertices* destino) {
@@ -209,7 +209,7 @@ bool InserirAresta(Vertices* origem, Vertices* destino) {
 /**
  * @brief Cria arestas bidirecionais entre vértices da mesma frequência.
  * 
- * @param lista Ponteiro para o início da lista de vértices.
+ * @param lista Apontador para o início da lista de vértices.
  * @return true se todas as arestas foram criadas com sucesso, false se houve erro.
  */
 bool CriarArestasMesmoFreq(Vertices* lista) {
@@ -232,7 +232,7 @@ bool CriarArestasMesmoFreq(Vertices* lista) {
  * @brief Cria uma estrutura de grafo a partir da lista de vértices existente.
  * 
  * @param listaVertices Lista ligada de vértices já com as arestas inseridas.
- * @return Grafos* Ponteiro para a estrutura do grafo criada.
+ * @return Grafos* Apontador para a estrutura do grafo criada.
  */
 Grafos* CriarGrafo(Vertices* listaVertices) {
     Grafos* novoGrafo = (Grafos*)malloc(sizeof(Grafos));
@@ -266,14 +266,14 @@ Grafos* CriarGrafo(Vertices* listaVertices) {
 /**
  * @brief Procura um vértice com coordenadas (x, y) numa lista ligada de vértices.
  * 
- * Esta função percorre a lista de vértices e retorna o ponteiro para o vértice
+ * Esta função percorre a lista de vértices e retorna o Apontador para o vértice
  * que possui as coordenadas indicadas. Se não for encontrado nenhum vértice
  * com essas coordenadas, a função retorna NULL.
  * 
- * @param lista Ponteiro para o início da lista ligada de vértices.
+ * @param lista Apontador para o início da lista ligada de vértices.
  * @param x Coordenada X a procurar.
  * @param y Coordenada Y a procurar.
- * @return Vertices* Ponteiro para o vértice encontrado, ou NULL se não for encontrado.
+ * @return Vertices* Apontador para o vértice encontrado, ou NULL se não for encontrado.
  */
 Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y) {
     while (lista != NULL) {
@@ -291,9 +291,9 @@ Vertices* EncontrarVerticePorCoordenadas(Vertices* lista, int x, int y) {
  * Esta função aloca memória para um novo elemento da lista de visitados
  * e insere o vértice dado no fim da lista.
  * 
- * @param lista Ponteiro para a lista atual de vértices visitados.
- * @param v Ponteiro para o vértice a ser adicionado.
- * @return Visitados* Ponteiro para o início atualizado da lista de visitados.
+ * @param lista Apontador para a lista atual de vértices visitados.
+ * @param v Apontador para o vértice a ser adicionado.
+ * @return Visitados* Apontador para o início atualizado da lista de visitados.
  */
 Visitados* AdicionarVisitado(Visitados* lista, Vertices* v) {
     Visitados* novo = malloc(sizeof(Visitados));
@@ -320,8 +320,8 @@ Visitados* AdicionarVisitado(Visitados* lista, Vertices* v) {
  * Esta função marca o vértice como visitado, adiciona-o à lista de visitados
  * e continua a procura recursivamente para todos os seus vértices adjacentes.
  * 
- * @param v Ponteiro para o vértice atual.
- * @param visitados Ponteiro para a lista de vértices visitados.
+ * @param v Apontador para o vértice atual.
+ * @param visitados Apontador para a lista de vértices visitados.
  * @return Visitados* Lista atualizada de vértices visitados após a procura.
  */
 Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados) {
@@ -346,7 +346,7 @@ Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados) {
  * encontra o vértice de origem com as coordenadas fornecidas e inicia a 
  * procura em profundidade recursiva a partir dele.
  * 
- * @param listaVertices Ponteiro para o início da lista de vértices do grafo.
+ * @param listaVertices Apontador para o início da lista de vértices do grafo.
  * @param x Coordenada X do vértice de origem.
  * @param y Coordenada Y do vértice de origem.
  * @return Visitados* Lista de vértices visitados durante a procura em profundidade, ou NULL se o vértice de origem não for encontrado.
@@ -371,7 +371,7 @@ Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y) {
  * Reinicia os vértices como não visitados, encontra o vértice de origem e executa BFS,
  * retornando uma lista de vértices visitados na ordem em que foram alcançados.
  * 
- * @param listaVertices Ponteiro para a lista de todos os vértices do grafo.
+ * @param listaVertices Apontador para a lista de todos os vértices do grafo.
  * @param x Coordenada X do vértice de origem.
  * @param y Coordenada Y do vértice de origem.
  * @return Visitados* Lista de vértices visitados durante a procura em largura.
@@ -390,7 +390,7 @@ Visitados* ProcuraLargura(Vertices* listaVertices, int x, int y) {
     // Inicializa a fila
     Vertices** fila = malloc(sizeof(Vertices*) * 1000); // Vertices** (Apontador para um array de apontadores para vertices)
     int inicio = 0, fim = 0;
-    // fila armazena até 1000 ponteiros para 'vertices', que estes apontam para vertices diferentes
+    // fila armazena até 1000 Apontadors para 'vertices', que estes apontam para vertices diferentes
 
     Visitados* visitados = NULL;
 
@@ -417,8 +417,152 @@ Visitados* ProcuraLargura(Vertices* listaVertices, int x, int y) {
     return visitados;
 }
 
+/**
+ * @brief Cria uma cópia de uma lista ligada de vértices visitados.
+ *
+ * Esta função copia a lista de vértices visitados preservando a ordem original.
+ *
+ * @param original Apontador para o início da lista original de visitados.
+ * @return Apontador para a nova lista copiada (com a mesma ordem).
+ */
+Visitados* CopiarVisitados(Visitados* original) {
+    if (original == NULL) return NULL;
 
+    Visitados* nova = malloc(sizeof(Visitados));
+    nova->vertice = original->vertice;
+    nova->prox = CopiarVisitados(original->prox);
+    return nova;
+}
 
+/**
+ * @brief Cria uma cópia invertida de uma lista ligada de vértices visitados.
+ *
+ * Esta função copia a lista de vértices visitados mas com a ordem invertida, 
+ * útil para representar caminhos na ordem correta (origem -> destino).
+ *
+ * @param original Apontador para o início da lista original de visitados.
+ * @return Apontador para a nova lista copiada com a ordem invertida.
+ */
+Visitados* CopiarVisitadosInvertido(Visitados* original) {
+    Visitados* invertido = NULL;
+    while (original != NULL) {
+        Visitados* novo = malloc(sizeof(Visitados));
+        novo->vertice = original->vertice;
+        novo->prox = invertido;
+        invertido = novo;
+        original = original->prox;
+    }
+    return invertido;
+}
+
+/**
+ * @brief Função auxiliar recursiva que encontra todos os caminhos entre dois vértices.
+ * 
+ * @param atual Vértice atual a explorar
+ * @param destino Vértice destino a alcançar
+ * @param caminhoAtual Caminho atual em construção
+ * @param listaCaminhos Lista de caminhos encontrados (por referência)
+ * @return Caminho* Lista de caminhos encontrados (atualizada)
+ */
+Caminho* BuscarCaminhos(Vertices* atual, Vertices* destino, Visitados* caminhoAtual, Caminho* listaCaminhos) {
+    if (atual == NULL || atual->visitado) return listaCaminhos;
+
+    atual->visitado = true;
+
+    // Criar uma nova entrada de Visitados com este vértice
+    Visitados* novoVisitado = malloc(sizeof(Visitados));
+    novoVisitado->vertice = atual;
+    novoVisitado->prox = caminhoAtual;
+
+    if (atual == destino) {
+        // Criar uma cópia do caminho completo (que inclui o novoVisitado)
+        Visitados* copia = CopiarVisitadosInvertido(novoVisitado);
+
+        // Guardar novo caminho
+        Caminho* novo = malloc(sizeof(Caminho));
+        if (novo != NULL) {
+            novo->vertices = copia;
+            novo->prox = listaCaminhos;
+            listaCaminhos = novo;
+        }
+    } else {
+        for (Arestas* adj = atual->adjacencias; adj != NULL; adj = adj->prox) {
+            listaCaminhos = BuscarCaminhos(adj->destino, destino, novoVisitado, listaCaminhos);
+        }
+    }
+
+    atual->visitado = false;
+
+    free(novoVisitado);
+
+    return listaCaminhos;
+}
+
+/**
+ * @brief Encontra e imprime todos os caminhos entre duas antenas dadas pelas coordenadas.
+ * 
+ * @param grafo Estrutura do grafo com todos os vértices e arestas
+ * @param xOrigem Coordenada X da antena de origem
+ * @param yOrigem Coordenada Y da antena de origem
+ * @param xDestino Coordenada X da antena de destino
+ * @param yDestino Coordenada Y da antena de destino
+ * @return Caminho* Lista de caminhos encontrados
+ */
+Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDestino, int yDestino) {
+    Vertices* origem = EncontrarVerticePorCoordenadas(grafo->listaVertices, xOrigem, yOrigem);
+    Vertices* destino = EncontrarVerticePorCoordenadas(grafo->listaVertices, xDestino, yDestino);
+
+    // Reset visitados
+    for (Vertices* v = grafo->listaVertices; v != NULL; v = v->prox) {
+        v->visitado = false;
+    }
+
+    if (origem == NULL || destino == NULL) {
+        return NULL;
+    }
+
+    Caminho* caminhos = BuscarCaminhos(origem, destino, NULL, NULL);
+
+    return caminhos;
+}
+
+/**
+ * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
+ *
+ * Para duas frequências fornecidas (freq1 e freq2), esta função constrói uma lista de todos os pares possíveis
+ * de vértices onde um tem a frequência freq1 e o outro freq2.
+ *
+ * @param grafo Apontador para o grafo onde os vértices estão definidos.
+ * @param freq1 Primeira frequência de ressonância.
+ * @param freq2 Segunda frequência de ressonância.
+ * @return Estrutura ListaPares contendo todos os pares encontrados.
+ */
+ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2) {
+    int capacidade = 10, tamanho = 0;
+    ParAntenas* pares = malloc(sizeof(ParAntenas) * capacidade);
+
+    for (Vertices* v1 = grafo->listaVertices; v1 != NULL; v1 = v1->prox) {
+        if (v1->freq != freq1) continue;
+
+        for (Vertices* v2 = grafo->listaVertices; v2 != NULL; v2 = v2->prox) {
+            if (v2->freq != freq2) continue;
+
+            if (tamanho >= capacidade) {
+                capacidade *= 2;
+                pares = realloc(pares, sizeof(ParAntenas) * capacidade);
+            }
+
+            pares[tamanho].a = v1;
+            pares[tamanho].b = v2;
+            tamanho++;
+        }
+    }
+
+    ListaPares resultado;
+    resultado.pares = pares;
+    resultado.tamanho = tamanho;
+    return resultado;
+}
 
 
 
@@ -449,6 +593,33 @@ bool LimparMemoriaGrafos(Grafos* grafo) {
     free(grafo);
     return true;
 }
+
+/**
+ * @brief Liberta a memória alocada para a lista ligada dos caminhos
+ * 
+ * @param lista 
+ * @return true 
+ * @return false 
+ */
+bool LibertarCaminhos(Caminho* lista) {
+    while (lista != NULL) {
+        Caminho* temp = lista;
+        Visitados* v = temp->vertices;
+        while (v != NULL) {
+            Visitados* tempV = v;
+            v = v->prox;
+            free(tempV);
+        }
+        lista = lista->prox;
+        free(temp);
+    }
+    return true;
+}
+
+
+
+
+
 
 
 void MostrarListaVertices(Vertices* inicio) {

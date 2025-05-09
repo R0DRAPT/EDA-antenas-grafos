@@ -19,7 +19,8 @@
   *     
   */
  int main() {
-    #pragma region Fase_1
+    #pragma region FASE_1
+
     #pragma region Declaração_Variaveis
     // Ponteiros para listas ligadas de antenas
     Antenas* listaAntenas = NULL; // Lista principal de antenas.
@@ -138,7 +139,8 @@
     printf("\n----------------------------------------------\n\n");
     #pragma endregion
     
-    //Fase 2
+    #pragma region FASE_2
+
     #pragma region Declaração_Variaveis
     // Ponteiros para listas ligadas
     Grafos* listaGrafos = NULL; // Lista principal.
@@ -172,6 +174,10 @@
     // Cria o vertice e depois insere-o lista principal ordenadamente
     Vertices* g3 = CriarVertice('H', 1, 1);
     ListaVerticesAux = InserirVerticeOrdenado(ListaVerticesAux, g3);
+
+    // Cria o vertice e depois insere-o lista principal ordenadamente
+    // Vertices* g4 = CriarVertice('H', 9, 4);
+    // ListaVerticesAux = InserirVerticeOrdenado(ListaVerticesAux, g4);
 
     MostrarListaVertices(ListaVerticesAux);
     #pragma endregion
@@ -228,11 +234,51 @@
     }
     #pragma endregion
 
+    #pragma region Encontrar_Caminhos
+    // Encontra e mostra o caminho entre dois vértices no grafo
+    Caminho* caminhoEncontrado = ListarTodosCaminhos(grafoFinal, 2, 2, 6, 8);
+
+    if (caminhoEncontrado != NULL) {
+        printf("\nCaminho(s) encontrado(s):\n");
+        int n = 1;
+        for (Caminho* atual = caminhoEncontrado; atual != NULL; atual = atual->prox) {
+            printf("Caminho %d: ", n++);
+            Visitados* v = atual->vertices;
+            while (v != NULL) {
+                printf("(%c - %d,%d)", v->vertice->freq, v->vertice->x, v->vertice->y);
+                if (v->prox != NULL) printf(" -> ");
+                v = v->prox;
+            }
+            printf("\n");
+        }
+    } else {
+        printf("\nNenhum caminho encontrado");
+    }
+    printf("\n");
+    #pragma endregion
+
+    #pragma region Listar_Intersecoes_Por_Freq
+    ListaPares lista = ObterParesEntreFrequencias(grafoFinal, 'A', '0');
+
+    printf("Pares entre antenas 'A' e '0':\n");
+    for (int i = 0; i < lista.tamanho; i++) {
+        printf("(%c - %d,%d) <-> (%c - %d,%d)\n",
+               lista.pares[i].a->freq, lista.pares[i].a->x, lista.pares[i].a->y,
+               lista.pares[i].b->freq, lista.pares[i].b->x, lista.pares[i].b->y);
+    }
+    
+    #pragma endregion
+
+    #pragma endregion
+
+
     #pragma region Limpar_Memorias
     // Liberta a memória alocada da lista ligada de antenas
     LimparMemoria(ListaAntenasAux);
     // Liberta a memória alocada da lista ligada do efeito nefasto
     LimparMemoriaEfeito(listaNefasto);
+    // Liberta listas auxiliares e grafos
+    LimparMemoriaGrafos(grafoFinal);
     #pragma endregion
 
     return 0; 

@@ -86,13 +86,58 @@ Visitados* ProcuraRecursiva(Vertices* v, Visitados* visitados);
  */
 Visitados* ProcuraProfundidade(Vertices* listaVertices, int x, int y);
 
-
+/**
+ * @brief Realiza uma procura em largura (BFS) a partir de um vértice com coordenadas (x, y).
+ */
 Visitados* ProcuraLargura(Vertices* listaVertices, int x, int y);
+
+/**
+ * @brief Cria uma cópia de uma lista ligada de vértices visitados.
+ */
+Visitados* CopiarVisitados(Visitados* original);
+
+/**
+ * @brief Cria uma cópia invertida de uma lista ligada de vértices visitados.
+ */
+Visitados* CopiarVisitadosInvertido(Visitados* original);
+
+/**
+ * @brief Função auxiliar recursiva que encontra todos os caminhos entre dois vértices.
+ */
+Caminho* BuscarCaminhos(Vertices* atual, Vertices* destino, Visitados* caminhoAtual, Caminho* listaCaminhos);
+
+/**
+ * @brief Encontra e imprime todos os caminhos entre duas antenas dadas pelas coordenadas.
+ */
+Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDestino, int yDestino);
+
+/**
+ * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
+ */
+ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
+
+
+
+
+
+
+
+
+
+
 
 /**
  * @brief Liberta a memória alocada para a lista ligada dos grafos
  */
 bool LimparMemoriaGrafos(Grafos* grafo);
+
+/**
+ * @brief Liberta a memória alocada para a lista ligada dos caminhos
+ */
+bool LibertarCaminhos(Caminho* lista);
+
+
+
 
 void MostrarListaVertices(Vertices* inicio);
 
