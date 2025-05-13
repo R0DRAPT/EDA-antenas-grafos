@@ -490,7 +490,6 @@ char* LerListaFicheiro(const char* nomeFicheiro) {
 
 
 
-
 void MostrarLista(Antenas* inicio) {
     Antenas* atual = inicio; // Começa pelo primeiro elemento
 
