@@ -547,17 +547,17 @@ ListaIntersecoes ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq
 
     // Percorrer todos os pares de vértices com freq1 (grupo A)
     for (Vertices* a1 = grafo->listaVertices; a1 != NULL; a1 = a1->prox) {
-        if (a1->freq != freq1) continue;
+        if (a1->freq != freq1) continue; //se não for, passa o vertice
 
         for (Vertices* a2 = a1->prox; a2 != NULL; a2 = a2->prox) {
-            if (a2->freq != freq1) continue;
+            if (a2->freq != freq1) continue; //se não for, passa o vertice
 
             // Percorrer todos os pares de vértices com freq2 (grupo B)
             for (Vertices* b1 = grafo->listaVertices; b1 != NULL; b1 = b1->prox) {
-                if (b1->freq != freq2) continue;
+                if (b1->freq != freq2) continue; //se não for, passa o vertice
 
                 for (Vertices* b2 = b1->prox; b2 != NULL; b2 = b2->prox) {
-                    if (b2->freq != freq2) continue;
+                    if (b2->freq != freq2) continue; //se não for, passa o vertice
 
                     // Verificar capacidade da lista
                     if (tamanho >= capacidade) {

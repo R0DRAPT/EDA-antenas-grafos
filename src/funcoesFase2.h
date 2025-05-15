@@ -121,22 +121,10 @@ bool GravarListaVerticesFicheiro(Vertices* inicio, const char* nomeFicheiro);
 char* LerListaVerticesFicheiro(const char* nomeFicheiro);
 
 
-
-
-
 /**
  * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
  */
 //ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -148,8 +136,6 @@ bool LimparMemoriaGrafos(Grafos* grafo);
  * @brief Liberta a memória alocada para a lista ligada dos caminhos
  */
 bool LibertarCaminhos(Caminho* lista);
-
-
 
 
 void MostrarListaVertices(Vertices* inicio);
