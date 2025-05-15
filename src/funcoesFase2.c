@@ -527,6 +527,160 @@ Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDesti
 }
 
 /**
+ * @brief Obtém todas as interseções possíveis entre pares de vértices de duas frequências distintas.
+ * 
+ * Esta função percorre o grafo à procura de todos os pares possíveis de vértices da frequência freq1 (grupo A)
+ * e da frequência freq2 (grupo B). Para cada combinação válida de dois vértices de cada grupo, calcula-se
+ * um ponto de interseção com base nas coordenadas mínimas e máximas dos vértices.
+ * 
+ * O resultado é armazenado numa lista dinâmica de estruturas Intersecao.
+ * 
+ * @param grafo Apontador para o grafo que contém a lista de vértices.
+ * @param freq1 Primeira frequência a ser considerada (grupo A).
+ * @param freq2 Segunda frequência a ser considerada (grupo B).
+ * @return ListaIntersecoes Estrutura contendo todas as interseções encontradas.
+ */
+ListaIntersecoes ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2) {
+    int capacidade = 10;
+    int tamanho = 0;
+    Intersecao* lista = malloc(sizeof(Intersecao) * capacidade);
+
+    // Percorrer todos os pares de vértices com freq1 (grupo A)
+    for (Vertices* a1 = grafo->listaVertices; a1 != NULL; a1 = a1->prox) {
+        if (a1->freq != freq1) continue;
+
+        for (Vertices* a2 = a1->prox; a2 != NULL; a2 = a2->prox) {
+            if (a2->freq != freq1) continue;
+
+            // Percorrer todos os pares de vértices com freq2 (grupo B)
+            for (Vertices* b1 = grafo->listaVertices; b1 != NULL; b1 = b1->prox) {
+                if (b1->freq != freq2) continue;
+
+                for (Vertices* b2 = b1->prox; b2 != NULL; b2 = b2->prox) {
+                    if (b2->freq != freq2) continue;
+
+                    // Verificar capacidade da lista
+                    if (tamanho >= capacidade) {
+                        capacidade *= 2;
+                        lista = realloc(lista, sizeof(Intersecao) * capacidade);
+                    }
+
+                    // Determinar Amin e Amax
+                    Vertices* Amin = (a1->x < a2->x || (a1->x == a2->x && a1->y < a2->y)) ? a1 : a2;
+                    Vertices* Amax = (Amin == a1) ? a2 : a1;
+
+                    // Determinar Bmin e Bmax
+                    Vertices* Bmax = (b1->x > b2->x || (b1->x == b2->x && b1->y > b2->y)) ? b1 : b2;
+                    Vertices* Bmin = (Bmax == b1) ? b2 : b1;
+
+                    // Calcular ponto de intersecção
+                    int x = (Amin->x + Bmax->x) / 2;
+                    int y = (Amax->y + Bmin->y) / 2;
+
+                    // Guardar na lista
+                    lista[tamanho].Amin = Amin;
+                    lista[tamanho].Amax = Amax;
+                    lista[tamanho].Bmin = Bmin;
+                    lista[tamanho].Bmax = Bmax;
+                    lista[tamanho].x_intersec = x;
+                    lista[tamanho].y_intersec = y;
+                    tamanho++;
+                }
+            }
+        }
+    }
+
+    ListaIntersecoes resultado;
+    resultado.intersecoes = lista;
+    resultado.tamanho = tamanho;
+    return resultado;
+}
+
+/**
+ * @brief Grava a lista de antenas num ficheiro binário.
+ * 
+ * Escreve os dados de cada antena no ficheiro especificado, sem guardar ponteiros.
+ * 
+ * @param inicio Ponteiro para a lista de antenas.
+ * @param nomeFicheiro Nome do ficheiro binário.
+ * @return true Se a gravação for bem-sucedida.
+ * @return false Em caso de erro.
+ */
+bool GravarListaVerticesFicheiro(Vertices* inicio, const char* nomeFicheiro) {
+    if (inicio == NULL) return false;
+
+    FILE* fp = fopen(nomeFicheiro, "wb");
+    if (fp == NULL) return false;
+
+    Vertices* aux = inicio;
+    VerticesBin elemento;
+
+    while (aux != NULL) {
+        elemento.x = aux->x;
+        elemento.y = aux->y;
+        elemento.freq = aux->freq;
+
+        fwrite(&elemento, sizeof(VerticesBin), 1, fp);
+        aux = aux->prox;
+    }
+
+    fclose(fp);
+    return true;
+}
+
+/**
+ * @brief Lê antenas de um ficheiro binário e devolve uma string formatada.
+ * 
+ * Lê os dados de antenas do ficheiro binário e devolve uma string com as informações.
+ * A string é alocada dinamicamente e deve ser libertada com `free()`.
+ * 
+ * @param nomeFicheiro Nome do ficheiro a ler.
+ * @return char* String formatada ou NULL em caso de erro.
+ */
+char* LerListaVerticesFicheiro(const char* nomeFicheiro) {
+    FILE* fp = fopen(nomeFicheiro, "rb");
+    if (fp == NULL) return NULL;
+
+    size_t tamanho = 2048;
+    char* buffer = malloc(tamanho);
+    if (!buffer) {
+        fclose(fp);
+        return NULL;
+    }
+    buffer[0] = '\0';
+
+    VerticesBin elemento;
+    char linha[64];
+
+    while (fread(&elemento, sizeof(VerticesBin), 1, fp) == 1) {
+        snprintf(linha, sizeof(linha), "%c - (%d, %d)\n", elemento.freq, elemento.x, elemento.y); //Formata e armazena caracteres no buffer
+
+        // Expande buffer se necessário
+        if (strlen(buffer) + strlen(linha) + 1 > tamanho) {
+            tamanho *= 2;
+            char* novo = realloc(buffer, tamanho);
+            if (!novo) {
+                free(buffer);
+                fclose(fp);
+                return NULL;
+            }
+            buffer = novo;
+        }
+
+        strcat(buffer, linha);
+    }
+
+    fclose(fp);
+    return buffer;
+}
+
+
+
+
+
+
+
+/**
  * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
  *
  * Para duas frequências fornecidas (freq1 e freq2), esta função constrói uma lista de todos os pares possíveis
@@ -537,7 +691,7 @@ Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDesti
  * @param freq2 Segunda frequência de ressonância.
  * @return Estrutura ListaPares contendo todos os pares encontrados.
  */
-ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2) {
+/* ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2) {
     int capacidade = 10, tamanho = 0;
     ParAntenas* pares = malloc(sizeof(ParAntenas) * capacidade);
 
@@ -562,9 +716,7 @@ ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2) {
     resultado.pares = pares;
     resultado.tamanho = tamanho;
     return resultado;
-}
-
-
+} */
 
 /**
  * @brief Liberta a memória alocada para a lista ligada dos grafos
@@ -615,12 +767,6 @@ bool LibertarCaminhos(Caminho* lista) {
     }
     return true;
 }
-
-
-
-
-
-
 
 void MostrarListaVertices(Vertices* inicio) {
     Vertices* atual = inicio; // Começa pelo primeiro elemento

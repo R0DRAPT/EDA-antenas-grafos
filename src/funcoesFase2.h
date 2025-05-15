@@ -112,9 +112,22 @@ Caminho* BuscarCaminhos(Vertices* atual, Vertices* destino, Visitados* caminhoAt
 Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDestino, int yDestino);
 
 /**
+ * @brief Obtém todas as interseções possíveis entre pares de vértices de duas frequências distintas.
+ */
+ListaIntersecoes ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
+
+bool GravarListaVerticesFicheiro(Vertices* inicio, const char* nomeFicheiro);
+
+char* LerListaVerticesFicheiro(const char* nomeFicheiro);
+
+
+
+
+
+/**
  * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
  */
-ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
+//ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
 
 
 

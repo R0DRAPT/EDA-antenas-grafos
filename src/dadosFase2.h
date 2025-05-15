@@ -91,5 +91,34 @@ typedef struct ListaPares {
     int tamanho;                    /**< Número total de pares armazenados. */
 } ListaPares;
 
+/**
+ * @brief Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta.
+ * 
+ * Contém os quatro vértices envolvidos na interseção (dois para a frequência A e dois para a frequência B),
+ * bem como as coordenadas calculadas do ponto de interseção.
+ */
+typedef struct Intersecao {
+    Vertices* Amin;      /**< Vértice da frequência A com coordenadas mínimas (menores x e y). */
+    Vertices* Amax;      /**< Vértice da frequência A com coordenadas máximas (maiores x e y). */
+    Vertices* Bmin;      /**< Vértice da frequência B com coordenadas máximas (maiores x e y). */
+    Vertices* Bmax;      /**< Vértice da frequência B com coordenadas mínimas (menores x e y). */
+    int x_intersec;      /**< Coordenada X do ponto de interseção calculada. */
+    int y_intersec;      /**< Coordenada Y do ponto de interseção calculada. */
+} Intersecao;
+
+/**
+ * @brief Lista dinâmica de interseções encontradas entre pares de antenas.
+ */
+typedef struct ListaIntersecoes {
+    Intersecao* intersecoes; /**< Ponteiro para o array dinâmico de interseções. */
+    int tamanho;             /**< Número atual de interseções armazenadas. */
+} ListaIntersecoes;
+
+typedef struct VerticesBin
+{
+    char freq;                      /**< Frequência da antena */
+    int x, y;                       /**< Coordenadas X e Y da antena */
+}VerticesBin;
+
 
 #endif

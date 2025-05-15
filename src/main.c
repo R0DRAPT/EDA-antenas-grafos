@@ -259,15 +259,48 @@
     #pragma endregion
 
     #pragma region Listar_Intersecoes_Por_Freq
-    ListaPares lista = ObterParesEntreFrequencias(grafoFinal, 'A', '0');
+    // ListaPares lista = ObterParesEntreFrequencias(grafoFinal, 'A', 'O');
 
-    printf("Pares entre antenas 'A' e '0':\n");
-    for (int i = 0; i < lista.tamanho; i++) {
-        printf("(%c - %d,%d) <-> (%c - %d,%d)\n",
-               lista.pares[i].a->freq, lista.pares[i].a->x, lista.pares[i].a->y,
-               lista.pares[i].b->freq, lista.pares[i].b->x, lista.pares[i].b->y);
+    // printf("Pares entre antenas 'A' e 'O':\n");
+    // for (int i = 0; i < lista.tamanho; i++) {
+    //     printf("(%c - %d,%d) <-> (%c - %d,%d)\n",
+    //            lista.pares[i].a->freq, lista.pares[i].a->x, lista.pares[i].a->y,
+    //            lista.pares[i].b->freq, lista.pares[i].b->x, lista.pares[i].b->y);
+    // }
+    #pragma endregion
+
+    #pragma region Listar_V2
+    ListaIntersecoes inters = ObterParesEntreFrequencias(grafoFinal, 'A', 'O');
+    printf("Interseções de pares:\n");
+    for (int i = 0; i < inters.tamanho; i++) {
+        Intersecao it = inters.intersecoes[i];
+        printf("(%c - %d,%d), (%c - %d,%d) <-> (%c - %d,%d), (%c - %d,%d) => Intersecção em (%d,%d)\n",
+            it.Amin->freq, it.Amin->x, it.Amin->y,
+            it.Amax->freq, it.Amax->x, it.Amax->y,
+            it.Bmin->freq, it.Bmin->x, it.Bmin->y,
+            it.Bmax->freq, it.Bmax->x, it.Bmax->y,
+            it.x_intersec, it.y_intersec);
     }
-    
+    #pragma endregion
+
+    #pragma region Grava_E_Imprime_ListaVerticesAux_Ficheiro_Bin
+    const char* ficheiroVertices = "Ficheiros/Bin_mapaVertices";
+
+    // Grava
+    if (GravarListaVerticesFicheiro(ListaVerticesAux, ficheiroVertices)) {
+        printf("\nGravado com sucesso em '%s'\n", ficheiroVertices);
+    } else {
+        printf("Erro ao gravar em '%s'\n", ficheiroVertices);
+    }
+
+    // Lê
+    char* conteudoVertices = LerListaVerticesFicheiro(ficheiroVertices);
+    if (conteudoVertices) {
+        printf("Conteudo do ficheiro:\n%s", conteudoVertices);
+        free(conteudoVertices);
+    } else {
+        printf("Erro ao ler ficheiro '%s'\n", ficheiroVertices);
+    }
     #pragma endregion
 
     #pragma endregion
