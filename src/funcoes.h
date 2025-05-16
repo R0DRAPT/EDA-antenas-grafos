@@ -95,9 +95,12 @@ bool LimparMemoria(Antenas* inicio);
  */
 bool LimparMemoriaEfeito(ListaEfeitoNefasto* lista);
 
+#pragma region Mostrar
+/*
 void MostrarLista(Antenas* inicio);
 
 void MostrarListaNefasto(ListaEfeitoNefasto* inicio);
-
+*/
+#pragma endregion
 
 #endif

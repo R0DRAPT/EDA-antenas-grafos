@@ -116,15 +116,25 @@ Caminho* ListarTodosCaminhos(Grafos* grafo, int xOrigem, int yOrigem, int xDesti
  */
 ListaIntersecoes ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
 
+/**
+ * @brief Grava a lista de antenas num ficheiro binário.
+ */
 bool GravarListaVerticesFicheiro(Vertices* inicio, const char* nomeFicheiro);
 
+/**
+ * @brief Lê antenas de um ficheiro binário e devolve uma string formatada.
+ */
 char* LerListaVerticesFicheiro(const char* nomeFicheiro);
 
+
+#pragma region Pares
 
 /**
  * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
  */
 //ListaPares ObterParesEntreFrequencias(Grafos* grafo, char freq1, char freq2);
+
+#pragma endregion
 
 
 /**
@@ -138,8 +148,15 @@ bool LimparMemoriaGrafos(Grafos* grafo);
 bool LibertarCaminhos(Caminho* lista);
 
 
+#pragma region Mostrar
+
+/*
 void MostrarListaVertices(Vertices* inicio);
 
 void MostrarAdjacencias(Vertices* lista);
+*/
+
+#pragma endregion
+
 
 #endif

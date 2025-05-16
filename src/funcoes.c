@@ -488,42 +488,6 @@ char* LerListaFicheiro(const char* nomeFicheiro) {
     return buffer;
 }
 
-
-
-void MostrarLista(Antenas* inicio) {
-    Antenas* atual = inicio; // Começa pelo primeiro elemento
-
-    // Se a lista estiver vazia
-    if (atual == NULL) {
-        return;
-    }
-
-    // Percorre a lista e imprime cada antena
-    printf("Lista de Antenas:\n");
-    while (atual != NULL) {
-        printf("%c - (%d, %d)\n", atual->freq, atual->x, atual->y);
-        atual = atual->prox; // Avança para o próximo elemento
-    }
-}
-
-void MostrarListaNefasto(ListaEfeitoNefasto* inicio) {
-    ListaEfeitoNefasto* atual = inicio; // Começa pelo primeiro elemento
-
-    // Se a lista estiver vazia
-    if (atual == NULL) {
-        return;
-    }
-
-    // Percorre a lista e imprime cada antena
-    printf("Lista do Efeito Nefasto:\n");
-    while (atual != NULL) {
-        printf("(%d, %d)\n", atual->x, atual->y);
-        atual = atual->prox; // Avança para o próximo elemento
-    }
-}
-
-
-
 /**
  * @brief Liberta a memória alocada para a lista ligada de antenas.
  * 
@@ -556,3 +520,41 @@ bool LimparMemoriaEfeito(ListaEfeitoNefasto* lista) {
     }
     return true;
 }
+
+
+
+#pragma Mostrar
+/*
+void MostrarLista(Antenas* inicio) {
+    Antenas* atual = inicio; // Começa pelo primeiro elemento
+
+    // Se a lista estiver vazia
+    if (atual == NULL) {
+        return;
+    }
+
+    // Percorre a lista e imprime cada antena
+    printf("Lista de Antenas:\n");
+    while (atual != NULL) {
+        printf("%c - (%d, %d)\n", atual->freq, atual->x, atual->y);
+        atual = atual->prox; // Avança para o próximo elemento
+    }
+}
+
+void MostrarListaNefasto(ListaEfeitoNefasto* inicio) {
+    ListaEfeitoNefasto* atual = inicio; // Começa pelo primeiro elemento
+
+    // Se a lista estiver vazia
+    if (atual == NULL) {
+        return;
+    }
+
+    // Percorre a lista e imprime cada antena
+    printf("Lista do Efeito Nefasto:\n");
+    while (atual != NULL) {
+        printf("(%d, %d)\n", atual->x, atual->y);
+        atual = atual->prox; // Avança para o próximo elemento
+    }
+}
+*/
+#pragma 

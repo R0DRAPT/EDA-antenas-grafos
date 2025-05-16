@@ -675,10 +675,7 @@ char* LerListaVerticesFicheiro(const char* nomeFicheiro) {
 }
 
 
-
-
-
-
+#pragma region Pares
 
 /**
  * @brief Obtém todos os pares possíveis de vértices entre duas frequências distintas.
@@ -717,6 +714,9 @@ char* LerListaVerticesFicheiro(const char* nomeFicheiro) {
     resultado.tamanho = tamanho;
     return resultado;
 } */
+
+#pragma endregion
+
 
 /**
  * @brief Liberta a memória alocada para a lista ligada dos grafos
@@ -768,6 +768,10 @@ bool LibertarCaminhos(Caminho* lista) {
     return true;
 }
 
+
+#pragma region Mostrar
+
+/*
 void MostrarListaVertices(Vertices* inicio) {
     Vertices* atual = inicio; // Começa pelo primeiro elemento
 
@@ -809,4 +813,7 @@ void MostrarAdjacencias(Vertices* lista) {
     printf("\n\n");
 }
 
+*/
+
+#pragma endregion
 

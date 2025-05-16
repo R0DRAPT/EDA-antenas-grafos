@@ -114,6 +114,13 @@ typedef struct ListaIntersecoes {
     int tamanho;             /**< Número atual de interseções armazenadas. */
 } ListaIntersecoes;
 
+/**
+ * @struct VerticesBin
+ * @brief Estrutura que representa uma antena com coordenadas e frequência.
+ * 
+ * Esta estrutura é utilizada para gravação num ficheiro binário.
+ * Contém as coordenadas da antena (x, y) e a sua frequência.
+ */
 typedef struct VerticesBin
 {
     char freq;                      /**< Frequência da antena */

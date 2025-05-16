@@ -56,7 +56,7 @@
     Antenas* a3 = CriarAntena('H', 1, 1);
     ListaAntenasAux = InserirAntenasOrdenado(ListaAntenasAux, a3);
 
-    MostrarLista(ListaAntenasAux);
+    //MostrarLista(ListaAntenasAux);
     #pragma endregion
 
     #pragma region Modifica_Antena
@@ -70,7 +70,7 @@
     printf("\nEfeito nefasto calculado\n");
     listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
     printf("\n");
-    MostrarListaNefasto(listaNefasto);
+    //MostrarListaNefasto(listaNefasto);
     #pragma endregion
 
     #pragma region Remover_Antena
@@ -84,10 +84,10 @@
     listaNefasto = CalcularEfeitoNefasto(ListaAntenasAux);
 
     printf("\nLista apos remover a antena\n\n");
-    MostrarLista(ListaAntenasAux);
+    //MostrarLista(ListaAntenasAux);
 
     printf("\nEfeitos nefastos apos remover a antena\n\n");
-    MostrarListaNefasto(listaNefasto);
+    //MostrarListaNefasto(listaNefasto);
     #pragma endregion
 
     #pragma region Listagem_Tabular
@@ -179,7 +179,7 @@
     // Vertices* g4 = CriarVertice('H', 9, 4);
     // ListaVerticesAux = InserirVerticeOrdenado(ListaVerticesAux, g4);
 
-    MostrarListaVertices(ListaVerticesAux);
+    //MostrarListaVertices(ListaVerticesAux);
     #pragma endregion
 
     #pragma region Cria_&_Insere_Arestas
@@ -192,7 +192,7 @@
 
     // Mostra os vértices com suas adjacências
     printf("\nLista de vertices com suas adjacencias:\n");
-    MostrarAdjacencias(ListaVerticesAux);
+    //MostrarAdjacencias(ListaVerticesAux);
     #pragma endregion
 
     #pragma region Criar_Grafo
