@@ -1,0 +1,54 @@
+\doxysection{funcoes.\+h}
+\hypertarget{funcoes_8h_source}{}\label{funcoes_8h_source}\index{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoes.h@{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoes.h}}
+\mbox{\hyperlink{funcoes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dados_8h}{dados.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \#ifndef\ FUNCOES\_H\ }\textcolor{comment}{//Include\ Guard\ -\/\ evita\ inclusões\ múltiplas\ do\ mesmo\ cabeçalho\ durante\ a\ compilação.}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \#define\ FUNCOES\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a9d3d11fdf97a52941b2a6c57fcd3b233}{ListarMapaAntenas}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nomeFicheiro);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a4b8ae1fe9e3f7739090f341758052406}{CriarAntena}}(\textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a330d8cff2776397b5b33b4e19c15d88f}{InserirAntenaInicio}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ nova);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a8574ba14cecb7002673dc663604d651d}{InserirAntenaFim}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ nova);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a557488ef7cf581f3361172b3651ac07a}{InserirAntenasOrdenado}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ nova);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_a416369637c73b797ec9c67d5a0e50348}{CarregarMapaAntenas}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nomeFicheiro);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_ae09b2588f9e56667c5a46599b5047625}{ModificarAntena}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ novaFreq,\ \textcolor{keywordtype}{int}\ novoX,\ \textcolor{keywordtype}{int}\ novoY);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ \mbox{\hyperlink{funcoes_8h_a907af48f95c0ea60580bb4245b09795a}{CalcularEfeitoNefasto}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ lista);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ \mbox{\hyperlink{funcoes_8h_ac01a611bb1c31ae0327c8a141f53ae2d}{InserirEfeitoSeNaoExiste}}(\mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ lista,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \mbox{\hyperlink{struct_antenas}{Antenas}}*\ \mbox{\hyperlink{funcoes_8h_aeb3ea380f8a2af9d37510fda68b06ce9}{RemoverAntena}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ inicioNefasto,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ \mbox{\hyperlink{funcoes_8h_a7eb311b7d290e7b8f39d58ce7183840c}{RemoverEfeitosNefastos}}(\mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ inicio,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoes_8h_a733b74dfc3a161524a16ee34c6feb3bc}{ProximaLinhaTabular}}(\mbox{\hyperlink{struct_antenas}{Antenas}}**\ ant,\ \mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}**\ nef,\ \textcolor{keywordtype}{char}*\ freq,\ \textcolor{keywordtype}{int}*\ xAnt,\ \textcolor{keywordtype}{int}*\ yAnt,\ \textcolor{keywordtype}{int}*\ xNef,\ \textcolor{keywordtype}{int}*\ yNef);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoes_8h_a5e9bf41388a812af80624ed421f8b34f}{GravarListaFicheiro}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{funcoes_8h_a193b55ed6016900f0a06f65bb44a5f3a}{LerListaFicheiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoes_8h_ae49fb653c99abf2e1994ce32ab397369}{LimparMemoria}}(\mbox{\hyperlink{struct_antenas}{Antenas}}*\ inicio);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoes_8h_acf76818332d41724db0b7f97837176ac}{LimparMemoriaEfeito}}(\mbox{\hyperlink{struct_lista_efeito_nefasto}{ListaEfeitoNefasto}}*\ lista);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#pragma\ region\ Mostrar}}
+\DoxyCodeLine{00099\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00100\ \textcolor{comment}{void\ MostrarLista(Antenas*\ inicio);}}
+\DoxyCodeLine{00101\ \textcolor{comment}{}}
+\DoxyCodeLine{00102\ \textcolor{comment}{void\ MostrarListaNefasto(ListaEfeitoNefasto*\ inicio);}}
+\DoxyCodeLine{00103\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

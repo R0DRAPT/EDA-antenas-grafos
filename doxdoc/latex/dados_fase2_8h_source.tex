@@ -1,0 +1,79 @@
+\doxysection{dados\+Fase2.\+h}
+\hypertarget{dados_fase2_8h_source}{}\label{dados_fase2_8h_source}\index{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h@{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h}}
+\mbox{\hyperlink{dados_fase2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ DADOSFASE2\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ DADOSFASE2\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00017\ \ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_arestas}{Arestas}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_arestas_a705e31fb1673e6cb9aa1a32aa1be714c}{destino}};\ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_arestas_ad4a57c66302cc224e456d9778c367a40}{origem}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_arestas}{Arestas}}*\ \mbox{\hyperlink{struct_arestas_a082b8185df61e78eb8b25383ff160b80}{prox}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{struct_arestas}{Arestas}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertices}{Vertices}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertices_aa1f816cd1313e7d2738c25d33719cd20}{freq}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ \mbox{\hyperlink{struct_vertices_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_vertices_a7432ec6b760cca5a63570ce7d9f9565b}{visitado}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_arestas}{Arestas}}*\ \mbox{\hyperlink{struct_vertices_a2c0e1bc94574e3383d5ec60050aac70c}{adjacencias}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_vertices_a759120945616964ed562869f80651d20}{prox}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{struct_vertices}{Vertices}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafos}{Grafos}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_grafos_a9e8ea1a7595c6749a98a36847fd84905}{listaVertices}};\ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_grafos_a29cac0aff7e6d15e55e9a8285799fe87}{numVertices}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_grafos_a7fea8337e363c0e4b5ac41cd53f19d45}{numArestas}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \}\ \mbox{\hyperlink{struct_grafos}{Grafos}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_visitados}{Visitados}}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_visitados_a5cdd934606d934d79207e3172dbd75c8}{vertice}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_visitados}{Visitados}}*\ \mbox{\hyperlink{struct_visitados_aa7e2d99b2bd0c694fae1f704e3dd6fc9}{prox}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \}\ \mbox{\hyperlink{struct_visitados}{Visitados}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_caminho}{Caminho}}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{struct_visitados}{Visitados}}*\ \mbox{\hyperlink{struct_caminho_a25e134435695421efbcd534eae0f10eb}{vertices}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_caminho}{Caminho}}*\ \mbox{\hyperlink{struct_caminho_ab28945fe16e1f699d0f2953250f3b3f5}{prox}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \}\ \mbox{\hyperlink{struct_caminho}{Caminho}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_caminhos}{ListaCaminhos}}\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{struct_caminho}{Caminho}}*\ \mbox{\hyperlink{struct_lista_caminhos_ae9c521dce328386c7aa2aacb900a3926}{primeiro}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{struct_lista_caminhos}{ListaCaminhos}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_par_antenas}{ParAntenas}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_par_antenas_a3f22d06760bb50495b80ad64520cb4fd}{a}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_par_antenas_a012e314191460f715bd36d6d00313e08}{b}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \}\ \mbox{\hyperlink{struct_par_antenas}{ParAntenas}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_pares}{ListaPares}}\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{struct_par_antenas}{ParAntenas}}*\ \mbox{\hyperlink{struct_lista_pares_aea36bb0defd1f536fc46e1f5b581bbc6}{pares}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lista_pares_a0a06f50c808099546e057b445cc90c14}{tamanho}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \}\ \mbox{\hyperlink{struct_lista_pares}{ListaPares}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_intersecao}{Intersecao}}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_intersecao_aa18b68210b743a6991ccdc87ffaef7fe}{Amin}};\ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_intersecao_a047997919cc0e3391b9f7dff26658882}{Amax}};\ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_intersecao_a26bd42bd3dbf2426181f20ecad5da6f8}{Bmin}};\ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{struct_vertices}{Vertices}}*\ \mbox{\hyperlink{struct_intersecao_a753a61b648dec921f242f485c816bef1}{Bmax}};\ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_intersecao_a2dc60c26522812e79a0c39ef3ec07889}{x\_intersec}};\ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_intersecao_a148eaa9fd4f61cdb856032c2e9fd0f12}{y\_intersec}};\ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \}\ \mbox{\hyperlink{dados_fase2_8h_ab50d1c68c7725f60975288845dffd9ae}{Intersecao}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_intersecoes}{ListaIntersecoes}}\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{struct_intersecao}{Intersecao}}*\ \mbox{\hyperlink{struct_lista_intersecoes_a76c0b9bc267c0ade23963a239d788f81}{intersecoes}};\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lista_intersecoes_a0a06f50c808099546e057b445cc90c14}{tamanho}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \}\ \mbox{\hyperlink{dados_fase2_8h_a8cb0687a044198eae58de6b17b82f4e1}{ListaIntersecoes}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertices_bin}{VerticesBin}}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertices_bin_aa1f816cd1313e7d2738c25d33719cd20}{freq}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ \mbox{\hyperlink{struct_vertices_bin_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \}\mbox{\hyperlink{struct_vertices_bin}{VerticesBin}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

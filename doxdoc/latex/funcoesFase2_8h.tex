@@ -1,0 +1,621 @@
+\doxysection{/mnt/c/\+Users/maced/\+Desktop/\+Universidade/1\+Ano/2\+Semestre/\+EDA/\+TP\+\_\+\+EDA/src/funcoes\+Fase2.h File Reference}
+\hypertarget{funcoesFase2_8h}{}\label{funcoesFase2_8h}\index{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoesFase2.h@{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoesFase2.h}}
+
+
+Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em \doxylink{funcoes_8c}{funcoes.\+c} (Fase 2)  
+
+
+{\ttfamily \#include "{}dados\+Fase2.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a143b335de2fa3e56f7c78b4d6ebc6b51}{Listar\+Mapa\+Vertices}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Lê o ficheiro "{}mapa\+Vertices.\+txt"{} e imprime o seu conteúdo no terminal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_ac6ff9ad59bfa3b20e135b1c7544e02b4}{Criar\+Vertice}} (char freq, int x, int y)
+\begin{DoxyCompactList}\small\item\em Cria um novo vértice com os dados fornecidos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a900ed8abdd2c9cfed446379e676c7961}{Inserir\+Vertice\+Inicio}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere uma antena no início da lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a03a250eb84fd3036072d2995a4a6d152}{Inserir\+Vertice\+Fim}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere um vertice no final da lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a93f1149f3063636e265be97c334d7a02}{Inserir\+Vertice\+Ordenado}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere um vertice na lista ligada de forma ordenada pelas coordenadas (x, y). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_ae8c57ed7da1a988d81684b6e4d5e902d}{Carregar\+Mapa\+Vertices}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Carrega os vertices do ficheiro "{}mapa\+Vertices.\+txt"{} para uma lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structArestas}{Arestas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a9f5c5e8168c9a2808b7f37bdd5001439}{Criar\+Aresta}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}destino)
+\begin{DoxyCompactList}\small\item\em Cria uma nova aresta com os dados fornecidos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoesFase2_8h_aaf732828be4397ecaa5861b34cd0e17b}{Inserir\+Aresta}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}destino)
+\begin{DoxyCompactList}\small\item\em Insere uma aresta na lista de adjacências do vértice de origem. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoesFase2_8h_af53ba0ae069762b4b468eb6c061e6cde}{Criar\+Arestas\+Mesmo\+Freq}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Cria arestas bidirecionais entre vértices da mesma frequência. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_ac0d93ea370b9d878c2b1a029e8ad9a9b}{Criar\+Grafo}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}lista\+Vertices)
+\begin{DoxyCompactList}\small\item\em Cria uma estrutura de grafo a partir da lista de vértices existente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a42342ebb75c09ebbab23ecd3d07672ae}{Encontrar\+Vertice\+Por\+Coordenadas}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}lista, int x, int y)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a5b8ed434b71d4a49c8714d9df658b515}{Adicionar\+Visitado}} (\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Adiciona um vértice no final da lista de visitados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a5ca6ba359bceaf3e486304e35a6f7b77}{Procura\+Recursiva}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}v, \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}visitados)
+\begin{DoxyCompactList}\small\item\em Realiza uma procura em profundidade recursiva a partir de um vértice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_aabe58ef638a38f1e51c1642921ed06a1}{Procura\+Profundidade}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}lista\+Vertices, int x, int y)
+\begin{DoxyCompactList}\small\item\em Inicia uma procura em profundidade (DFS) a partir de um vértice com coordenadas específicas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_ac3a3a31f00ca86b41b7a2357247d34ed}{Procura\+Largura}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}lista\+Vertices, int x, int y)
+\begin{DoxyCompactList}\small\item\em Realiza uma procura em largura (BFS) a partir de um vértice com coordenadas (x, y). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a7757322adc21d050238f98929c02dac0}{Copiar\+Visitados}} (\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}original)
+\begin{DoxyCompactList}\small\item\em Cria uma cópia de uma lista ligada de vértices visitados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a287561c792fb7e6b78344200b974ccd7}{Copiar\+Visitados\+Invertido}} (\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}original)
+\begin{DoxyCompactList}\small\item\em Cria uma cópia invertida de uma lista ligada de vértices visitados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a343bdbd87d33367e2b1dea3645932eae}{Buscar\+Caminhos}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}atual, \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}destino, \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}caminho\+Atual, \mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*}lista\+Caminhos)
+\begin{DoxyCompactList}\small\item\em Função auxiliar recursiva que encontra todos os caminhos entre dois vértices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_ab16ec66fe4c062a7f79f10218ab420ff}{Listar\+Todos\+Caminhos}} (\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}grafo, int x\+Origem, int y\+Origem, int x\+Destino, int y\+Destino)
+\begin{DoxyCompactList}\small\item\em Encontra e imprime todos os caminhos entre duas antenas dadas pelas coordenadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structListaIntersecoes}{Lista\+Intersecoes}} \mbox{\hyperlink{funcoesFase2_8h_a889221bd629f2220f91e29c88c38f136}{Obter\+Pares\+Entre\+Frequencias}} (\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}grafo, char freq1, char freq2)
+\begin{DoxyCompactList}\small\item\em Obtém todas as interseções possíveis entre pares de vértices de duas frequências distintas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoesFase2_8h_adf26914c47c305ec14a0de8abf9c0e8b}{Gravar\+Lista\+Vertices\+Ficheiro}} (\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}inicio, const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Grava a lista de antenas num ficheiro binário. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoesFase2_8h_a7e323400b6f8e3ab09c8a8f15cf4aee9}{Ler\+Lista\+Vertices\+Ficheiro}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Lê antenas de um ficheiro binário e devolve uma string formatada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoesFase2_8h_ab8f8120a3adb6cc2091293e73dad2ebf}{Limpar\+Memoria\+Grafos}} (\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}grafo)
+\begin{DoxyCompactList}\small\item\em Obtém todos os pares possíveis de vértices entre duas frequências distintas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoesFase2_8h_a376e010f1e7d7965aff13522d4529731}{Libertar\+Caminhos}} (\mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista ligada dos caminhos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em \doxylink{funcoes_8c}{funcoes.\+c} (Fase 2) 
+
+\begin{DoxyAuthor}{Author}
+Rodrigo Miranda (\href{mailto:a31509@alunos.ipca.pt}{\texttt{ a31509@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/03-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funcoesFase2_8h_a5b8ed434b71d4a49c8714d9df658b515}\label{funcoesFase2_8h_a5b8ed434b71d4a49c8714d9df658b515} 
+\index{funcoesFase2.h@{funcoesFase2.h}!AdicionarVisitado@{AdicionarVisitado}}
+\index{AdicionarVisitado@{AdicionarVisitado}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{AdicionarVisitado()}{AdicionarVisitado()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Adicionar\+Visitado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}}]{lista,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Adiciona um vértice no final da lista de visitados. 
+
+Esta função aloca memória para um novo elemento da lista de visitados e insere o vértice dado no fim da lista.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Apontador para a lista atual de vértices visitados. \\
+\hline
+{\em v} & Apontador para o vértice a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Visitados\texorpdfstring{$\ast$}{*} Apontador para o início atualizado da lista de visitados. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a343bdbd87d33367e2b1dea3645932eae}\label{funcoesFase2_8h_a343bdbd87d33367e2b1dea3645932eae} 
+\index{funcoesFase2.h@{funcoesFase2.h}!BuscarCaminhos@{BuscarCaminhos}}
+\index{BuscarCaminhos@{BuscarCaminhos}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{BuscarCaminhos()}{BuscarCaminhos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*} Buscar\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{atual,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{destino,  }\item[{\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}}]{caminho\+Atual,  }\item[{\mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*}}]{lista\+Caminhos }\end{DoxyParamCaption})}
+
+
+
+Função auxiliar recursiva que encontra todos os caminhos entre dois vértices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em atual} & Vértice atual a explorar \\
+\hline
+{\em destino} & Vértice destino a alcançar \\
+\hline
+{\em caminho\+Atual} & \doxylink{structCaminho}{Caminho} atual em construção \\
+\hline
+{\em lista\+Caminhos} & Lista de caminhos encontrados (por referência) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Caminho\texorpdfstring{$\ast$}{*} Lista de caminhos encontrados (atualizada) 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ae8c57ed7da1a988d81684b6e4d5e902d}\label{funcoesFase2_8h_ae8c57ed7da1a988d81684b6e4d5e902d} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CarregarMapaVertices@{CarregarMapaVertices}}
+\index{CarregarMapaVertices@{CarregarMapaVertices}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CarregarMapaVertices()}{CarregarMapaVertices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Carregar\+Mapa\+Vertices (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Carrega os vertices do ficheiro "{}mapa\+Vertices.\+txt"{} para uma lista ligada. 
+
+Esta função lê um ficheiro de texto que contém o mapa dos vertices, identificando os vertices com base nos caracteres presentes. Cada verticie é adicionado ao final da lista ligada utilizando a função \doxylink{funcoesFase2_8c_a03a250eb84fd3036072d2995a4a6d152}{Inserir\+Vertice\+Fim()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & \doxylink{structCaminho}{Caminho} para o ficheiro de texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Retorna a lista de vertices encontrados no mapa. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a7757322adc21d050238f98929c02dac0}\label{funcoesFase2_8h_a7757322adc21d050238f98929c02dac0} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CopiarVisitados@{CopiarVisitados}}
+\index{CopiarVisitados@{CopiarVisitados}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CopiarVisitados()}{CopiarVisitados()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Copiar\+Visitados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}}]{original }\end{DoxyParamCaption})}
+
+
+
+Cria uma cópia de uma lista ligada de vértices visitados. 
+
+Esta função copia a lista de vértices visitados preservando a ordem original.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & Apontador para o início da lista original de visitados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para a nova lista copiada (com a mesma ordem). 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a287561c792fb7e6b78344200b974ccd7}\label{funcoesFase2_8h_a287561c792fb7e6b78344200b974ccd7} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CopiarVisitadosInvertido@{CopiarVisitadosInvertido}}
+\index{CopiarVisitadosInvertido@{CopiarVisitadosInvertido}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CopiarVisitadosInvertido()}{CopiarVisitadosInvertido()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Copiar\+Visitados\+Invertido (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}}]{original }\end{DoxyParamCaption})}
+
+
+
+Cria uma cópia invertida de uma lista ligada de vértices visitados. 
+
+Esta função copia a lista de vértices visitados mas com a ordem invertida, útil para representar caminhos na ordem correta (origem -\/\texorpdfstring{$>$}{>} destino).
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & Apontador para o início da lista original de visitados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para a nova lista copiada com a ordem invertida. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a9f5c5e8168c9a2808b7f37bdd5001439}\label{funcoesFase2_8h_a9f5c5e8168c9a2808b7f37bdd5001439} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CriarAresta@{CriarAresta}}
+\index{CriarAresta@{CriarAresta}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CriarAresta()}{CriarAresta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structArestas}{Arestas}} \texorpdfstring{$\ast$}{*} Criar\+Aresta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{origem,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{destino }\end{DoxyParamCaption})}
+
+
+
+Cria uma nova aresta com os dados fornecidos. 
+
+Cria uma nova aresta com os dados fornecidos.
+
+Aloca dinamicamente uma nova estrutura de aresta que liga um vértice de origem a um vértice de destino. Retorna um Apontador para a nova aresta criada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & Apontador para o vértice de origem. \\
+\hline
+{\em destino} & Apontador para o vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Arestas\texorpdfstring{$\ast$}{*} Apontador para a nova aresta criada, ou NULL em caso de erro de alocação. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_af53ba0ae069762b4b468eb6c061e6cde}\label{funcoesFase2_8h_af53ba0ae069762b4b468eb6c061e6cde} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CriarArestasMesmoFreq@{CriarArestasMesmoFreq}}
+\index{CriarArestasMesmoFreq@{CriarArestasMesmoFreq}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CriarArestasMesmoFreq()}{CriarArestasMesmoFreq()}}
+{\footnotesize\ttfamily bool Criar\+Arestas\+Mesmo\+Freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{lista }\end{DoxyParamCaption})}
+
+
+
+Cria arestas bidirecionais entre vértices da mesma frequência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Apontador para o início da lista de vértices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se todas as arestas foram criadas com sucesso, false se houve erro. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ac0d93ea370b9d878c2b1a029e8ad9a9b}\label{funcoesFase2_8h_ac0d93ea370b9d878c2b1a029e8ad9a9b} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CriarGrafo@{CriarGrafo}}
+\index{CriarGrafo@{CriarGrafo}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CriarGrafo()}{CriarGrafo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*} Criar\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{lista\+Vertices }\end{DoxyParamCaption})}
+
+
+
+Cria uma estrutura de grafo a partir da lista de vértices existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Vertices} & Lista ligada de vértices já com as arestas inseridas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grafos\texorpdfstring{$\ast$}{*} Apontador para a estrutura do grafo criada. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ac6ff9ad59bfa3b20e135b1c7544e02b4}\label{funcoesFase2_8h_ac6ff9ad59bfa3b20e135b1c7544e02b4} 
+\index{funcoesFase2.h@{funcoesFase2.h}!CriarVertice@{CriarVertice}}
+\index{CriarVertice@{CriarVertice}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{CriarVertice()}{CriarVertice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Criar\+Vertice (\begin{DoxyParamCaption}\item[{char}]{freq,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Cria um novo vértice com os dados fornecidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Carácter que representa a frequência do vertice. \\
+\hline
+{\em x} & Coordenada X do vertice. \\
+\hline
+{\em y} & Coordenada Y do vertice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Apontador para o novo vértice criado ou NULL em caso de falha. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a42342ebb75c09ebbab23ecd3d07672ae}\label{funcoesFase2_8h_a42342ebb75c09ebbab23ecd3d07672ae} 
+\index{funcoesFase2.h@{funcoesFase2.h}!EncontrarVerticePorCoordenadas@{EncontrarVerticePorCoordenadas}}
+\index{EncontrarVerticePorCoordenadas@{EncontrarVerticePorCoordenadas}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{EncontrarVerticePorCoordenadas()}{EncontrarVerticePorCoordenadas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Encontrar\+Vertice\+Por\+Coordenadas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{lista,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+Procura um vértice com coordenadas (x, y) numa lista ligada de vértices.
+
+
+\begin{DoxyItemize}
+\item Esta função percorre a lista de vértices e retorna o Apontador para o vértice que possui as coordenadas indicadas. Se não for encontrado nenhum vértice com essas coordenadas, a função retorna NULL.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Apontador para o início da lista ligada de vértices. \\
+\hline
+{\em x} & Coordenada X a procurar. \\
+\hline
+{\em y} & Coordenada Y a procurar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Apontador para o vértice encontrado, ou NULL se não for encontrado. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_adf26914c47c305ec14a0de8abf9c0e8b}\label{funcoesFase2_8h_adf26914c47c305ec14a0de8abf9c0e8b} 
+\index{funcoesFase2.h@{funcoesFase2.h}!GravarListaVerticesFicheiro@{GravarListaVerticesFicheiro}}
+\index{GravarListaVerticesFicheiro@{GravarListaVerticesFicheiro}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{GravarListaVerticesFicheiro()}{GravarListaVerticesFicheiro()}}
+{\footnotesize\ttfamily bool Gravar\+Lista\+Vertices\+Ficheiro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{inicio,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Grava a lista de antenas num ficheiro binário. 
+
+Escreve os dados de cada antena no ficheiro especificado, sem guardar ponteiros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para a lista de antenas. \\
+\hline
+{\em nome\+Ficheiro} & Nome do ficheiro binário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se a gravação for bem-\/sucedida. 
+
+false Em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_aaf732828be4397ecaa5861b34cd0e17b}\label{funcoesFase2_8h_aaf732828be4397ecaa5861b34cd0e17b} 
+\index{funcoesFase2.h@{funcoesFase2.h}!InserirAresta@{InserirAresta}}
+\index{InserirAresta@{InserirAresta}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{InserirAresta()}{InserirAresta()}}
+{\footnotesize\ttfamily bool Inserir\+Aresta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{origem,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{destino }\end{DoxyParamCaption})}
+
+
+
+Insere uma aresta na lista de adjacências do vértice de origem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & Apontador para o vértice de origem. \\
+\hline
+{\em destino} & Apontador para o vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a inserção foi bem-\/sucedida, false em caso de erro (ex\+: alocação falhou). 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a03a250eb84fd3036072d2995a4a6d152}\label{funcoesFase2_8h_a03a250eb84fd3036072d2995a4a6d152} 
+\index{funcoesFase2.h@{funcoesFase2.h}!InserirVerticeFim@{InserirVerticeFim}}
+\index{InserirVerticeFim@{InserirVerticeFim}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{InserirVerticeFim()}{InserirVerticeFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Inserir\+Vertice\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{inicio,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{nova }\end{DoxyParamCaption})}
+
+
+
+Insere um vertice no final da lista ligada. 
+
+Insere um vertice no final da lista ligada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Apontador para o início da lista ligada. \\
+\hline
+{\em nova} & Apontador para o novo vertice a ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Apontador para o início da lista após inserção. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a900ed8abdd2c9cfed446379e676c7961}\label{funcoesFase2_8h_a900ed8abdd2c9cfed446379e676c7961} 
+\index{funcoesFase2.h@{funcoesFase2.h}!InserirVerticeInicio@{InserirVerticeInicio}}
+\index{InserirVerticeInicio@{InserirVerticeInicio}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{InserirVerticeInicio()}{InserirVerticeInicio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Inserir\+Vertice\+Inicio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{inicio,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{nova }\end{DoxyParamCaption})}
+
+
+
+Insere uma antena no início da lista ligada. 
+
+Insere uma antena no início da lista ligada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Apontador para o início da lista ligada. \\
+\hline
+{\em nova} & Apontador para o novo vertice a ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Apontador atualizado para o início da lista. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a93f1149f3063636e265be97c334d7a02}\label{funcoesFase2_8h_a93f1149f3063636e265be97c334d7a02} 
+\index{funcoesFase2.h@{funcoesFase2.h}!InserirVerticeOrdenado@{InserirVerticeOrdenado}}
+\index{InserirVerticeOrdenado@{InserirVerticeOrdenado}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{InserirVerticeOrdenado()}{InserirVerticeOrdenado()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Inserir\+Vertice\+Ordenado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{inicio,  }\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{nova }\end{DoxyParamCaption})}
+
+
+
+Insere um vertice na lista ligada de forma ordenada pelas coordenadas (x, y). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Apontador para o início da lista ligada. \\
+\hline
+{\em nova} & Apontador para o novo vertice a ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices\texorpdfstring{$\ast$}{*} Apontador para o início da lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a7e323400b6f8e3ab09c8a8f15cf4aee9}\label{funcoesFase2_8h_a7e323400b6f8e3ab09c8a8f15cf4aee9} 
+\index{funcoesFase2.h@{funcoesFase2.h}!LerListaVerticesFicheiro@{LerListaVerticesFicheiro}}
+\index{LerListaVerticesFicheiro@{LerListaVerticesFicheiro}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{LerListaVerticesFicheiro()}{LerListaVerticesFicheiro()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} Ler\+Lista\+Vertices\+Ficheiro (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Lê antenas de um ficheiro binário e devolve uma string formatada. 
+
+Lê os dados de antenas do ficheiro binário e devolve uma string com as informações. A string é alocada dinamicamente e deve ser libertada com {\ttfamily free()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & Nome do ficheiro a ler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} String formatada ou NULL em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a376e010f1e7d7965aff13522d4529731}\label{funcoesFase2_8h_a376e010f1e7d7965aff13522d4529731} 
+\index{funcoesFase2.h@{funcoesFase2.h}!LibertarCaminhos@{LibertarCaminhos}}
+\index{LibertarCaminhos@{LibertarCaminhos}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{LibertarCaminhos()}{LibertarCaminhos()}}
+{\footnotesize\ttfamily bool Libertar\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*}}]{lista }\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para a lista ligada dos caminhos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ab8f8120a3adb6cc2091293e73dad2ebf}\label{funcoesFase2_8h_ab8f8120a3adb6cc2091293e73dad2ebf} 
+\index{funcoesFase2.h@{funcoesFase2.h}!LimparMemoriaGrafos@{LimparMemoriaGrafos}}
+\index{LimparMemoriaGrafos@{LimparMemoriaGrafos}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{LimparMemoriaGrafos()}{LimparMemoriaGrafos()}}
+{\footnotesize\ttfamily bool Limpar\+Memoria\+Grafos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Obtém todos os pares possíveis de vértices entre duas frequências distintas. 
+
+Liberta a memória alocada para a lista ligada dos grafos
+
+Para duas frequências fornecidas (freq1 e freq2), esta função constrói uma lista de todos os pares possíveis de vértices onde um tem a frequência freq1 e o outro freq2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo onde os vértices estão definidos. \\
+\hline
+{\em freq1} & Primeira frequência de ressonância. \\
+\hline
+{\em freq2} & Segunda frequência de ressonância. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estrutura \doxylink{structListaPares}{Lista\+Pares} contendo todos os pares encontrados.
+\end{DoxyReturn}
+Liberta a memória alocada para a lista ligada dos grafos
+
+Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nodo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & apontador para a estrutura que contem a lista ligada de vértices \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoesFase2_8h_a143b335de2fa3e56f7c78b4d6ebc6b51}\label{funcoesFase2_8h_a143b335de2fa3e56f7c78b4d6ebc6b51} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ListarMapaVertices@{ListarMapaVertices}}
+\index{ListarMapaVertices@{ListarMapaVertices}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ListarMapaVertices()}{ListarMapaVertices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*} Listar\+Mapa\+Vertices (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Lê o ficheiro "{}mapa\+Vertices.\+txt"{} e imprime o seu conteúdo no terminal. 
+
+\begin{DoxyReturn}{Returns}
+Retorna NULL pois não altera a lista ligada, apenas exibe os dados. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ab16ec66fe4c062a7f79f10218ab420ff}\label{funcoesFase2_8h_ab16ec66fe4c062a7f79f10218ab420ff} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ListarTodosCaminhos@{ListarTodosCaminhos}}
+\index{ListarTodosCaminhos@{ListarTodosCaminhos}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ListarTodosCaminhos()}{ListarTodosCaminhos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCaminho}{Caminho}} \texorpdfstring{$\ast$}{*} Listar\+Todos\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{int}]{x\+Origem,  }\item[{int}]{y\+Origem,  }\item[{int}]{x\+Destino,  }\item[{int}]{y\+Destino }\end{DoxyParamCaption})}
+
+
+
+Encontra e imprime todos os caminhos entre duas antenas dadas pelas coordenadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Estrutura do grafo com todos os vértices e arestas \\
+\hline
+{\em x\+Origem} & Coordenada X da antena de origem \\
+\hline
+{\em y\+Origem} & Coordenada Y da antena de origem \\
+\hline
+{\em x\+Destino} & Coordenada X da antena de destino \\
+\hline
+{\em y\+Destino} & Coordenada Y da antena de destino \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Caminho\texorpdfstring{$\ast$}{*} Lista de caminhos encontrados 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a889221bd629f2220f91e29c88c38f136}\label{funcoesFase2_8h_a889221bd629f2220f91e29c88c38f136} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ObterParesEntreFrequencias@{ObterParesEntreFrequencias}}
+\index{ObterParesEntreFrequencias@{ObterParesEntreFrequencias}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ObterParesEntreFrequencias()}{ObterParesEntreFrequencias()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structListaIntersecoes}{Lista\+Intersecoes}} Obter\+Pares\+Entre\+Frequencias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafos}{Grafos}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{char}]{freq1,  }\item[{char}]{freq2 }\end{DoxyParamCaption})}
+
+
+
+Obtém todas as interseções possíveis entre pares de vértices de duas frequências distintas. 
+
+Esta função percorre o grafo à procura de todos os pares possíveis de vértices da frequência freq1 (grupo A) e da frequência freq2 (grupo B). Para cada combinação válida de dois vértices de cada grupo, calcula-\/se um ponto de interseção com base nas coordenadas mínimas e máximas dos vértices.
+
+O resultado é armazenado numa lista dinâmica de estruturas \doxylink{structIntersecao}{Intersecao}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & Apontador para o grafo que contém a lista de vértices. \\
+\hline
+{\em freq1} & Primeira frequência a ser considerada (grupo A). \\
+\hline
+{\em freq2} & Segunda frequência a ser considerada (grupo B). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structListaIntersecoes}{Lista\+Intersecoes} Estrutura contendo todas as interseções encontradas. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_ac3a3a31f00ca86b41b7a2357247d34ed}\label{funcoesFase2_8h_ac3a3a31f00ca86b41b7a2357247d34ed} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ProcuraLargura@{ProcuraLargura}}
+\index{ProcuraLargura@{ProcuraLargura}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ProcuraLargura()}{ProcuraLargura()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Procura\+Largura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{lista\+Vertices,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Realiza uma procura em largura (BFS) a partir de um vértice com coordenadas (x, y). 
+
+Reinicia os vértices como não visitados, encontra o vértice de origem e executa BFS, retornando uma lista de vértices visitados na ordem em que foram alcançados.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Vertices} & Apontador para a lista de todos os vértices do grafo. \\
+\hline
+{\em x} & Coordenada X do vértice de origem. \\
+\hline
+{\em y} & Coordenada Y do vértice de origem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Visitados\texorpdfstring{$\ast$}{*} Lista de vértices visitados durante a procura em largura. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_aabe58ef638a38f1e51c1642921ed06a1}\label{funcoesFase2_8h_aabe58ef638a38f1e51c1642921ed06a1} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ProcuraProfundidade@{ProcuraProfundidade}}
+\index{ProcuraProfundidade@{ProcuraProfundidade}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ProcuraProfundidade()}{ProcuraProfundidade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Procura\+Profundidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{lista\+Vertices,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Inicia uma procura em profundidade (DFS) a partir de um vértice com coordenadas específicas. 
+
+Esta função reinicia o estado de todos os vértices como não visitados, encontra o vértice de origem com as coordenadas fornecidas e inicia a procura em profundidade recursiva a partir dele.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Vertices} & Apontador para o início da lista de vértices do grafo. \\
+\hline
+{\em x} & Coordenada X do vértice de origem. \\
+\hline
+{\em y} & Coordenada Y do vértice de origem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Visitados\texorpdfstring{$\ast$}{*} Lista de vértices visitados durante a procura em profundidade, ou NULL se o vértice de origem não for encontrado. 
+\end{DoxyReturn}
+\Hypertarget{funcoesFase2_8h_a5ca6ba359bceaf3e486304e35a6f7b77}\label{funcoesFase2_8h_a5ca6ba359bceaf3e486304e35a6f7b77} 
+\index{funcoesFase2.h@{funcoesFase2.h}!ProcuraRecursiva@{ProcuraRecursiva}}
+\index{ProcuraRecursiva@{ProcuraRecursiva}!funcoesFase2.h@{funcoesFase2.h}}
+\doxysubsubsection{\texorpdfstring{ProcuraRecursiva()}{ProcuraRecursiva()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*} Procura\+Recursiva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVertices}{Vertices}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{\mbox{\hyperlink{structVisitados}{Visitados}} \texorpdfstring{$\ast$}{*}}]{visitados }\end{DoxyParamCaption})}
+
+
+
+Realiza uma procura em profundidade recursiva a partir de um vértice. 
+
+Esta função marca o vértice como visitado, adiciona-\/o à lista de visitados e continua a procura recursivamente para todos os seus vértices adjacentes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Apontador para o vértice atual. \\
+\hline
+{\em visitados} & Apontador para a lista de vértices visitados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Visitados\texorpdfstring{$\ast$}{*} Lista atualizada de vértices visitados após a procura. 
+\end{DoxyReturn}

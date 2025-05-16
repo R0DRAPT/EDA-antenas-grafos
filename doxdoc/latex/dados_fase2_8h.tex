@@ -1,0 +1,100 @@
+\doxysection{C\+:/\+Users/maced/\+Desktop/\+Universidade/1\+Ano/2\+Semestre/\+EDA/\+TP\+\_\+\+EDA/src/dados\+Fase2.h File Reference}
+\hypertarget{dados_fase2_8h}{}\label{dados_fase2_8h}\index{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h@{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h}}
+
+
+Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa. (Fase 2)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_arestas}{Arestas}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa a ligação entre vértices com a mesma frequência. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vertices}{Vertices}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma antena no grafo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_grafos}{Grafos}}
+\begin{DoxyCompactList}\small\item\em Estrutura principal de um grafo, contendo os vértices e suas conexões. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_visitados}{Visitados}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa os vértices visitados durante a procura de caminhos. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_caminho}{Caminho}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um caminho possível entre duas antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lista_caminhos}{Lista\+Caminhos}}
+\begin{DoxyCompactList}\small\item\em Estrutura que guarda a lista de todos os caminhos possíveis entre duas antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_par_antenas}{Par\+Antenas}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um par de antenas com diferentes frequências. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lista_pares}{Lista\+Pares}}
+\begin{DoxyCompactList}\small\item\em Estrutura que armazena todos os pares possíveis de antenas entre duas frequências distintas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_intersecao}{Intersecao}}
+\begin{DoxyCompactList}\small\item\em Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lista_intersecoes}{Lista\+Intersecoes}}
+\begin{DoxyCompactList}\small\item\em Lista dinâmica de interseções encontradas entre pares de antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vertices_bin}{Vertices\+Bin}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma antena com coordenadas e frequência. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dados_fase2_8h_a67fcf1f1b8745d77946f358a13dafa61}\label{dados_fase2_8h_a67fcf1f1b8745d77946f358a13dafa61} 
+typedef struct Arestas {\bfseries Arestas}
+\item 
+\Hypertarget{dados_fase2_8h_a621e6120d6026134dfd6bd5a86d338bd}\label{dados_fase2_8h_a621e6120d6026134dfd6bd5a86d338bd} 
+typedef struct Vertices {\bfseries Vertices}
+\item 
+\Hypertarget{dados_fase2_8h_a056e2a0e0295ea296f6940a2c75f0452}\label{dados_fase2_8h_a056e2a0e0295ea296f6940a2c75f0452} 
+typedef struct Grafos {\bfseries Grafos}
+\item 
+\Hypertarget{dados_fase2_8h_a1bcfefc118f570572ea072e8c9f2582c}\label{dados_fase2_8h_a1bcfefc118f570572ea072e8c9f2582c} 
+typedef struct Visitados {\bfseries Visitados}
+\item 
+\Hypertarget{dados_fase2_8h_a3f0cb4117cdc19cde5f8f63fdab01c20}\label{dados_fase2_8h_a3f0cb4117cdc19cde5f8f63fdab01c20} 
+typedef struct Caminho {\bfseries Caminho}
+\item 
+\Hypertarget{dados_fase2_8h_ae1430194cd9a567e7a5d5f5e96269a18}\label{dados_fase2_8h_ae1430194cd9a567e7a5d5f5e96269a18} 
+typedef struct Lista\+Caminhos {\bfseries Lista\+Caminhos}
+\item 
+\Hypertarget{dados_fase2_8h_af6a8b3c8c34b1bb040eb34adf07d1de9}\label{dados_fase2_8h_af6a8b3c8c34b1bb040eb34adf07d1de9} 
+typedef struct Par\+Antenas {\bfseries Par\+Antenas}
+\item 
+\Hypertarget{dados_fase2_8h_a8aef4549532ffedb40e1dbedd5478ff6}\label{dados_fase2_8h_a8aef4549532ffedb40e1dbedd5478ff6} 
+typedef struct Lista\+Pares {\bfseries Lista\+Pares}
+\item 
+typedef struct Intersecao \mbox{\hyperlink{dados_fase2_8h_ab50d1c68c7725f60975288845dffd9ae}{Intersecao}}
+\begin{DoxyCompactList}\small\item\em Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. \end{DoxyCompactList}\item 
+\Hypertarget{dados_fase2_8h_a8cb0687a044198eae58de6b17b82f4e1}\label{dados_fase2_8h_a8cb0687a044198eae58de6b17b82f4e1} 
+typedef struct Lista\+Intersecoes {\bfseries Lista\+Intersecoes}
+\begin{DoxyCompactList}\small\item\em Lista dinâmica de interseções encontradas entre pares de antenas. \end{DoxyCompactList}\item 
+\Hypertarget{dados_fase2_8h_a335f52d1f934ceb41912e94f4b63cdc2}\label{dados_fase2_8h_a335f52d1f934ceb41912e94f4b63cdc2} 
+typedef struct Vertices\+Bin {\bfseries Vertices\+Bin}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa. (Fase 2) 
+
+\begin{DoxyAuthor}{Author}
+Rodrigo Miranda (\href{mailto:a31509@alunos.ipca.pt}{\texttt{ a31509@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/03-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{dados_fase2_8h_ab50d1c68c7725f60975288845dffd9ae}\index{dadosFase2.h@{dadosFase2.h}!Intersecao@{Intersecao}}
+\index{Intersecao@{Intersecao}!dadosFase2.h@{dadosFase2.h}}
+\doxysubsubsection{\texorpdfstring{Intersecao}{Intersecao}}
+{\footnotesize\ttfamily \label{dados_fase2_8h_ab50d1c68c7725f60975288845dffd9ae} 
+typedef struct Intersecao Intersecao}
+
+
+
+Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. 
+
+Contém os quatro vértices envolvidos na interseção (dois para a frequência A e dois para a frequência B), bem como as coordenadas calculadas do ponto de interseção. 

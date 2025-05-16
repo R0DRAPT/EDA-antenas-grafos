@@ -1,0 +1,100 @@
+\doxysection{/mnt/c/\+Users/maced/\+Desktop/\+Universidade/1\+Ano/2\+Semestre/\+EDA/\+TP\+\_\+\+EDA/src/dados\+Fase2.h File Reference}
+\hypertarget{dadosFase2_8h}{}\label{dadosFase2_8h}\index{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h@{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/dadosFase2.h}}
+
+
+Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa. (Fase 2)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structArestas}{Arestas}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa a ligação entre vértices com a mesma frequência. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structVertices}{Vertices}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma antena no grafo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGrafos}{Grafos}}
+\begin{DoxyCompactList}\small\item\em Estrutura principal de um grafo, contendo os vértices e suas conexões. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structVisitados}{Visitados}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa os vértices visitados durante a procura de caminhos. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCaminho}{Caminho}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um caminho possível entre duas antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structListaCaminhos}{Lista\+Caminhos}}
+\begin{DoxyCompactList}\small\item\em Estrutura que guarda a lista de todos os caminhos possíveis entre duas antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structParAntenas}{Par\+Antenas}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um par de antenas com diferentes frequências. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structListaPares}{Lista\+Pares}}
+\begin{DoxyCompactList}\small\item\em Estrutura que armazena todos os pares possíveis de antenas entre duas frequências distintas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIntersecao}{Intersecao}}
+\begin{DoxyCompactList}\small\item\em Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structListaIntersecoes}{Lista\+Intersecoes}}
+\begin{DoxyCompactList}\small\item\em Lista dinâmica de interseções encontradas entre pares de antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structVerticesBin}{Vertices\+Bin}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma antena com coordenadas e frequência. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dadosFase2_8h_a67fcf1f1b8745d77946f358a13dafa61}\label{dadosFase2_8h_a67fcf1f1b8745d77946f358a13dafa61} 
+typedef struct \mbox{\hyperlink{structArestas}{Arestas}} {\bfseries Arestas}
+\item 
+\Hypertarget{dadosFase2_8h_a621e6120d6026134dfd6bd5a86d338bd}\label{dadosFase2_8h_a621e6120d6026134dfd6bd5a86d338bd} 
+typedef struct \mbox{\hyperlink{structVertices}{Vertices}} {\bfseries Vertices}
+\item 
+\Hypertarget{dadosFase2_8h_a056e2a0e0295ea296f6940a2c75f0452}\label{dadosFase2_8h_a056e2a0e0295ea296f6940a2c75f0452} 
+typedef struct \mbox{\hyperlink{structGrafos}{Grafos}} {\bfseries Grafos}
+\item 
+\Hypertarget{dadosFase2_8h_a1bcfefc118f570572ea072e8c9f2582c}\label{dadosFase2_8h_a1bcfefc118f570572ea072e8c9f2582c} 
+typedef struct \mbox{\hyperlink{structVisitados}{Visitados}} {\bfseries Visitados}
+\item 
+\Hypertarget{dadosFase2_8h_a3f0cb4117cdc19cde5f8f63fdab01c20}\label{dadosFase2_8h_a3f0cb4117cdc19cde5f8f63fdab01c20} 
+typedef struct \mbox{\hyperlink{structCaminho}{Caminho}} {\bfseries Caminho}
+\item 
+\Hypertarget{dadosFase2_8h_ae1430194cd9a567e7a5d5f5e96269a18}\label{dadosFase2_8h_ae1430194cd9a567e7a5d5f5e96269a18} 
+typedef struct \mbox{\hyperlink{structListaCaminhos}{Lista\+Caminhos}} {\bfseries Lista\+Caminhos}
+\item 
+\Hypertarget{dadosFase2_8h_af6a8b3c8c34b1bb040eb34adf07d1de9}\label{dadosFase2_8h_af6a8b3c8c34b1bb040eb34adf07d1de9} 
+typedef struct \mbox{\hyperlink{structParAntenas}{Par\+Antenas}} {\bfseries Par\+Antenas}
+\item 
+\Hypertarget{dadosFase2_8h_a8aef4549532ffedb40e1dbedd5478ff6}\label{dadosFase2_8h_a8aef4549532ffedb40e1dbedd5478ff6} 
+typedef struct \mbox{\hyperlink{structListaPares}{Lista\+Pares}} {\bfseries Lista\+Pares}
+\item 
+typedef struct \mbox{\hyperlink{structIntersecao}{Intersecao}} \mbox{\hyperlink{dadosFase2_8h_ab50d1c68c7725f60975288845dffd9ae}{Intersecao}}
+\begin{DoxyCompactList}\small\item\em Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. \end{DoxyCompactList}\item 
+\Hypertarget{dadosFase2_8h_a8cb0687a044198eae58de6b17b82f4e1}\label{dadosFase2_8h_a8cb0687a044198eae58de6b17b82f4e1} 
+typedef struct \mbox{\hyperlink{structListaIntersecoes}{Lista\+Intersecoes}} {\bfseries Lista\+Intersecoes}
+\begin{DoxyCompactList}\small\item\em Lista dinâmica de interseções encontradas entre pares de antenas. \end{DoxyCompactList}\item 
+\Hypertarget{dadosFase2_8h_a335f52d1f934ceb41912e94f4b63cdc2}\label{dadosFase2_8h_a335f52d1f934ceb41912e94f4b63cdc2} 
+typedef struct \mbox{\hyperlink{structVerticesBin}{Vertices\+Bin}} {\bfseries Vertices\+Bin}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho dedicado à definição de estruturas e outros tipos de dados utilizados no programa. (Fase 2) 
+
+\begin{DoxyAuthor}{Author}
+Rodrigo Miranda (\href{mailto:a31509@alunos.ipca.pt}{\texttt{ a31509@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/03-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{dadosFase2_8h_ab50d1c68c7725f60975288845dffd9ae}\label{dadosFase2_8h_ab50d1c68c7725f60975288845dffd9ae} 
+\index{dadosFase2.h@{dadosFase2.h}!Intersecao@{Intersecao}}
+\index{Intersecao@{Intersecao}!dadosFase2.h@{dadosFase2.h}}
+\doxysubsubsection{\texorpdfstring{Intersecao}{Intersecao}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structIntersecao}{Intersecao}} \mbox{\hyperlink{structIntersecao}{Intersecao}}}
+
+
+
+Representa uma interseção entre dois pares de antenas, cada par com uma frequência distinta. 
+
+Contém os quatro vértices envolvidos na interseção (dois para a frequência A e dois para a frequência B), bem como as coordenadas calculadas do ponto de interseção. 

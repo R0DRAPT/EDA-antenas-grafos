@@ -1,0 +1,83 @@
+\doxysection{funcoes\+Fase2.\+h}
+\hypertarget{funcoesFase2_8h_source}{}\label{funcoesFase2_8h_source}\index{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoesFase2.h@{/mnt/c/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoesFase2.h}}
+\mbox{\hyperlink{funcoesFase2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \#include\ "{}\mbox{\hyperlink{dadosFase2_8h}{dadosFase2.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \#include\ <stdbool.h>}}
+\DoxyCodeLine{00014\ \ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ FUNCOESFASE2\_H\ }\textcolor{comment}{//Include\ Guard\ -\/\ evita\ inclusões\ múltiplas\ do\ mesmo\ cabeçalho\ durante\ a\ compilação.}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ FUNCOESFASE2\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_a143b335de2fa3e56f7c78b4d6ebc6b51}{ListarMapaVertices}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nomeFicheiro);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_ac6ff9ad59bfa3b20e135b1c7544e02b4}{CriarVertice}}(\textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_a900ed8abdd2c9cfed446379e676c7961}{InserirVerticeInicio}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ inicio,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ nova);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_a03a250eb84fd3036072d2995a4a6d152}{InserirVerticeFim}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ inicio,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ nova);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_a93f1149f3063636e265be97c334d7a02}{InserirVerticeOrdenado}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ inicio,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ nova);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_ae8c57ed7da1a988d81684b6e4d5e902d}{CarregarMapaVertices}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nomeFicheiro);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \mbox{\hyperlink{structArestas}{Arestas}}*\ \mbox{\hyperlink{funcoesFase2_8h_a9f5c5e8168c9a2808b7f37bdd5001439}{CriarAresta}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ origem,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ destino);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoesFase2_8h_aaf732828be4397ecaa5861b34cd0e17b}{InserirAresta}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ origem,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ destino);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoesFase2_8h_af53ba0ae069762b4b468eb6c061e6cde}{CriarArestasMesmoFreq}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ lista);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \mbox{\hyperlink{structGrafos}{Grafos}}*\ \mbox{\hyperlink{funcoesFase2_8h_ac0d93ea370b9d878c2b1a029e8ad9a9b}{CriarGrafo}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ listaVertices);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \mbox{\hyperlink{structVertices}{Vertices}}*\ \mbox{\hyperlink{funcoesFase2_8h_a42342ebb75c09ebbab23ecd3d07672ae}{EncontrarVerticePorCoordenadas}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ lista,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_a5b8ed434b71d4a49c8714d9df658b515}{AdicionarVisitado}}(\mbox{\hyperlink{structVisitados}{Visitados}}*\ lista,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ v);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_a5ca6ba359bceaf3e486304e35a6f7b77}{ProcuraRecursiva}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ v,\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ visitados);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_aabe58ef638a38f1e51c1642921ed06a1}{ProcuraProfundidade}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ listaVertices,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_ac3a3a31f00ca86b41b7a2357247d34ed}{ProcuraLargura}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ listaVertices,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_a7757322adc21d050238f98929c02dac0}{CopiarVisitados}}(\mbox{\hyperlink{structVisitados}{Visitados}}*\ original);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ \mbox{\hyperlink{funcoesFase2_8h_a287561c792fb7e6b78344200b974ccd7}{CopiarVisitadosInvertido}}(\mbox{\hyperlink{structVisitados}{Visitados}}*\ original);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \mbox{\hyperlink{structCaminho}{Caminho}}*\ \mbox{\hyperlink{funcoesFase2_8h_a343bdbd87d33367e2b1dea3645932eae}{BuscarCaminhos}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ atual,\ \mbox{\hyperlink{structVertices}{Vertices}}*\ destino,\ \mbox{\hyperlink{structVisitados}{Visitados}}*\ caminhoAtual,\ \mbox{\hyperlink{structCaminho}{Caminho}}*\ listaCaminhos);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \mbox{\hyperlink{structCaminho}{Caminho}}*\ \mbox{\hyperlink{funcoesFase2_8h_ab16ec66fe4c062a7f79f10218ab420ff}{ListarTodosCaminhos}}(\mbox{\hyperlink{structGrafos}{Grafos}}*\ grafo,\ \textcolor{keywordtype}{int}\ xOrigem,\ \textcolor{keywordtype}{int}\ yOrigem,\ \textcolor{keywordtype}{int}\ xDestino,\ \textcolor{keywordtype}{int}\ yDestino);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \mbox{\hyperlink{structListaIntersecoes}{ListaIntersecoes}}\ \mbox{\hyperlink{funcoesFase2_8h_a889221bd629f2220f91e29c88c38f136}{ObterParesEntreFrequencias}}(\mbox{\hyperlink{structGrafos}{Grafos}}*\ grafo,\ \textcolor{keywordtype}{char}\ freq1,\ \textcolor{keywordtype}{char}\ freq2);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoesFase2_8h_adf26914c47c305ec14a0de8abf9c0e8b}{GravarListaVerticesFicheiro}}(\mbox{\hyperlink{structVertices}{Vertices}}*\ inicio,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{funcoesFase2_8h_a7e323400b6f8e3ab09c8a8f15cf4aee9}{LerListaVerticesFicheiro}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#pragma\ region\ Pares}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{//ListaPares\ ObterParesEntreFrequencias(Grafos*\ grafo,\ char\ freq1,\ char\ freq2);}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoesFase2_8h_ab8f8120a3adb6cc2091293e73dad2ebf}{LimparMemoriaGrafos}}(\mbox{\hyperlink{structGrafos}{Grafos}}*\ grafo);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{funcoesFase2_8h_a376e010f1e7d7965aff13522d4529731}{LibertarCaminhos}}(\mbox{\hyperlink{structCaminho}{Caminho}}*\ lista);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#pragma\ region\ Mostrar}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00154\ \textcolor{comment}{void\ MostrarListaVertices(Vertices*\ inicio);}}
+\DoxyCodeLine{00155\ \textcolor{comment}{}}
+\DoxyCodeLine{00156\ \textcolor{comment}{void\ MostrarAdjacencias(Vertices*\ lista);}}
+\DoxyCodeLine{00157\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

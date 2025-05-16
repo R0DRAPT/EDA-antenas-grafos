@@ -1,0 +1,413 @@
+\doxysection{C\+:/\+Users/maced/\+Desktop/\+Universidade/1\+Ano/2\+Semestre/\+EDA/\+TP\+\_\+\+EDA/src/funcoes.h File Reference}
+\hypertarget{funcoes_8h}{}\label{funcoes_8h}\index{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoes.h@{C:/Users/maced/Desktop/Universidade/1Ano/2Semestre/EDA/TP\_EDA/src/funcoes.h}}
+
+
+Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em \doxylink{funcoes_8c}{funcoes.\+c} (Fase 1)  
+
+
+{\ttfamily \#include "{}dados.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a9d3d11fdf97a52941b2a6c57fcd3b233}{Listar\+Mapa\+Antenas}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a4b8ae1fe9e3f7739090f341758052406}{Criar\+Antena}} (char freq, int x, int y)
+\begin{DoxyCompactList}\small\item\em Cria uma nova antena com os dados fornecidos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a330d8cff2776397b5b33b4e19c15d88f}{Inserir\+Antena\+Inicio}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere uma antena no início da lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a8574ba14cecb7002673dc663604d651d}{Inserir\+Antena\+Fim}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere uma antena no final da lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a557488ef7cf581f3361172b3651ac07a}{Inserir\+Antenas\+Ordenado}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}nova)
+\begin{DoxyCompactList}\small\item\em Insere uma antena na lista ligada de forma ordenada pelas coordenadas (x, y). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a416369637c73b797ec9c67d5a0e50348}{Carregar\+Mapa\+Antenas}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Carrega as antenas do ficheiro (ex.\+: "{}mapa\+Antenas.\+txt"{}) para uma lista ligada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_ae09b2588f9e56667c5a46599b5047625}{Modificar\+Antena}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, int x, int y, char nova\+Freq, int novoX, int novoY)
+\begin{DoxyCompactList}\small\item\em Modifica uma antena existente na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a907af48f95c0ea60580bb4245b09795a}{Calcular\+Efeito\+Nefasto}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Calcula e retorna os pontos com efeito nefasto entre antenas com a mesma frequência. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_ac01a611bb1c31ae0327c8a141f53ae2d}{Inserir\+Efeito\+Se\+Nao\+Existe}} (\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista, int x, int y)
+\begin{DoxyCompactList}\small\item\em Insere um ponto na lista de efeito nefasto se ele ainda não existir. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_aeb3ea380f8a2af9d37510fda68b06ce9}{Remover\+Antena}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, \mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}inicio\+Nefasto, int x, int y)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista e os efeitos nefastos associados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a7eb311b7d290e7b8f39d58ce7183840c}{Remover\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}inicio, int x, int y)
+\begin{DoxyCompactList}\small\item\em Remove efeitos nefastos relacionados a uma antena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoes_8h_a733b74dfc3a161524a16ee34c6feb3bc}{Proxima\+Linha\+Tabular}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}ant, \mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}nef, char \texorpdfstring{$\ast$}{*}freq, int \texorpdfstring{$\ast$}{*}x\+Ant, int \texorpdfstring{$\ast$}{*}y\+Ant, int \texorpdfstring{$\ast$}{*}x\+Nef, int \texorpdfstring{$\ast$}{*}y\+Nef)
+\begin{DoxyCompactList}\small\item\em Cria uma tabela formatada com antenas e efeitos nefastos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoes_8h_a5e9bf41388a812af80624ed421f8b34f}{Gravar\+Lista\+Ficheiro}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio, const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Grava a lista de antenas num ficheiro binário. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcoes_8h_a193b55ed6016900f0a06f65bb44a5f3a}{Ler\+Lista\+Ficheiro}} (const char \texorpdfstring{$\ast$}{*}nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Lê antenas de um ficheiro binário e devolve uma string formatada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoes_8h_ae49fb653c99abf2e1994ce32ab397369}{Limpar\+Memoria}} (\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}inicio)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista ligada de antenas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcoes_8h_acf76818332d41724db0b7f97837176ac}{Limpar\+Memoria\+Efeito}} (\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para a lista ligada do efeito nefasto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho onde são declaradas as assinaturas das funções implementadas em \doxylink{funcoes_8c}{funcoes.\+c} (Fase 1) 
+
+\begin{DoxyAuthor}{Author}
+Rodrigo Miranda (\href{mailto:a31509@alunos.ipca.pt}{\texttt{ a31509@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/03-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funcoes_8h_a907af48f95c0ea60580bb4245b09795a}\index{funcoes.h@{funcoes.h}!CalcularEfeitoNefasto@{CalcularEfeitoNefasto}}
+\index{CalcularEfeitoNefasto@{CalcularEfeitoNefasto}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{CalcularEfeitoNefasto()}{CalcularEfeitoNefasto()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a907af48f95c0ea60580bb4245b09795a} 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} Calcular\+Efeito\+Nefasto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Calcula e retorna os pontos com efeito nefasto entre antenas com a mesma frequência. 
+
+Para cada par de antenas com a mesma frequência, calcula dois pontos simétricos e adiciona à lista de efeitos nefastos, se forem válidos (x \texorpdfstring{$>$}{>}= 1 e y \texorpdfstring{$>$}{>}= 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Ponteiro para a lista de antenas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista\+Efeito\+Nefasto\texorpdfstring{$\ast$}{*} Lista com os pontos de efeito nefasto. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a416369637c73b797ec9c67d5a0e50348}\index{funcoes.h@{funcoes.h}!CarregarMapaAntenas@{CarregarMapaAntenas}}
+\index{CarregarMapaAntenas@{CarregarMapaAntenas}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{CarregarMapaAntenas()}{CarregarMapaAntenas()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a416369637c73b797ec9c67d5a0e50348} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Carregar\+Mapa\+Antenas (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Carrega as antenas do ficheiro (ex.\+: "{}mapa\+Antenas.\+txt"{}) para uma lista ligada. 
+
+Carrega as antenas do ficheiro (ex.\+: "{}mapa\+Antenas.\+txt"{}) para uma lista ligada.
+
+Esta função lê um ficheiro de texto que contém o mapa das antenas, identificando as antenas com base nos caracteres presentes. Cada antena é adicionada ao final da lista ligada utilizando a função \doxylink{funcoes_8h_a8574ba14cecb7002673dc663604d651d}{Inserir\+Antena\+Fim()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & \doxylink{struct_caminho}{Caminho} para o ficheiro de texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Retorna a lista de antenas encontradas no mapa. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a4b8ae1fe9e3f7739090f341758052406}\index{funcoes.h@{funcoes.h}!CriarAntena@{CriarAntena}}
+\index{CriarAntena@{CriarAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{CriarAntena()}{CriarAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a4b8ae1fe9e3f7739090f341758052406} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Criar\+Antena (\begin{DoxyParamCaption}\item[{char}]{freq}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma nova antena com os dados fornecidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Carácter que representa a frequência da antena. \\
+\hline
+{\em x} & Coordenada X da antena. \\
+\hline
+{\em y} & Coordenada Y da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro para a nova antena criada ou NULL em caso de falha. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a5e9bf41388a812af80624ed421f8b34f}\index{funcoes.h@{funcoes.h}!GravarListaFicheiro@{GravarListaFicheiro}}
+\index{GravarListaFicheiro@{GravarListaFicheiro}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{GravarListaFicheiro()}{GravarListaFicheiro()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a5e9bf41388a812af80624ed421f8b34f} 
+bool Gravar\+Lista\+Ficheiro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Grava a lista de antenas num ficheiro binário. 
+
+Escreve os dados de cada antena no ficheiro especificado, sem guardar ponteiros.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para a lista de antenas. \\
+\hline
+{\em nome\+Ficheiro} & Nome do ficheiro binário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Se a gravação for bem-\/sucedida. 
+
+false Em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a8574ba14cecb7002673dc663604d651d}\index{funcoes.h@{funcoes.h}!InserirAntenaFim@{InserirAntenaFim}}
+\index{InserirAntenaFim@{InserirAntenaFim}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{InserirAntenaFim()}{InserirAntenaFim()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a8574ba14cecb7002673dc663604d651d} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Inserir\+Antena\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{nova}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma antena no final da lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada. \\
+\hline
+{\em nova} & Ponteiro para a nova antena a ser inserida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro para o início da lista após inserção. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a330d8cff2776397b5b33b4e19c15d88f}\index{funcoes.h@{funcoes.h}!InserirAntenaInicio@{InserirAntenaInicio}}
+\index{InserirAntenaInicio@{InserirAntenaInicio}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{InserirAntenaInicio()}{InserirAntenaInicio()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a330d8cff2776397b5b33b4e19c15d88f} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Inserir\+Antena\+Inicio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{nova}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma antena no início da lista ligada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada. \\
+\hline
+{\em nova} & Ponteiro para a nova antena a ser inserida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro atualizado para o início da lista. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a557488ef7cf581f3361172b3651ac07a}\index{funcoes.h@{funcoes.h}!InserirAntenasOrdenado@{InserirAntenasOrdenado}}
+\index{InserirAntenasOrdenado@{InserirAntenasOrdenado}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{InserirAntenasOrdenado()}{InserirAntenasOrdenado()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a557488ef7cf581f3361172b3651ac07a} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Inserir\+Antenas\+Ordenado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{nova}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma antena na lista ligada de forma ordenada pelas coordenadas (x, y). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada. \\
+\hline
+{\em nova} & Ponteiro para a nova antena a ser inserida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro para o início da lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_ac01a611bb1c31ae0327c8a141f53ae2d}\index{funcoes.h@{funcoes.h}!InserirEfeitoSeNaoExiste@{InserirEfeitoSeNaoExiste}}
+\index{InserirEfeitoSeNaoExiste@{InserirEfeitoSeNaoExiste}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{InserirEfeitoSeNaoExiste()}{InserirEfeitoSeNaoExiste()}}
+{\footnotesize\ttfamily \label{funcoes_8h_ac01a611bb1c31ae0327c8a141f53ae2d} 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} Inserir\+Efeito\+Se\+Nao\+Existe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Insere um ponto na lista de efeito nefasto se ele ainda não existir. 
+
+Evita duplicações ao inserir novos pontos na lista.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de pontos do efeito nefasto. \\
+\hline
+{\em x} & Coordenada X do novo ponto. \\
+\hline
+{\em y} & Coordenada Y do novo ponto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista\+Efeito\+Nefasto\texorpdfstring{$\ast$}{*} Lista atualizada com o novo ponto, se inserido. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a193b55ed6016900f0a06f65bb44a5f3a}\index{funcoes.h@{funcoes.h}!LerListaFicheiro@{LerListaFicheiro}}
+\index{LerListaFicheiro@{LerListaFicheiro}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{LerListaFicheiro()}{LerListaFicheiro()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a193b55ed6016900f0a06f65bb44a5f3a} 
+char \texorpdfstring{$\ast$}{*} Ler\+Lista\+Ficheiro (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Lê antenas de um ficheiro binário e devolve uma string formatada. 
+
+Lê os dados de antenas do ficheiro binário e devolve uma string com as informações. A string é alocada dinamicamente e deve ser libertada com {\ttfamily free()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & Nome do ficheiro a ler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} String formatada ou NULL em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_ae49fb653c99abf2e1994ce32ab397369}\index{funcoes.h@{funcoes.h}!LimparMemoria@{LimparMemoria}}
+\index{LimparMemoria@{LimparMemoria}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{LimparMemoria()}{LimparMemoria()}}
+{\footnotesize\ttfamily \label{funcoes_8h_ae49fb653c99abf2e1994ce32ab397369} 
+bool Limpar\+Memoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{}\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para a lista ligada de antenas. 
+
+Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nodo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada de antenas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8h_acf76818332d41724db0b7f97837176ac}\index{funcoes.h@{funcoes.h}!LimparMemoriaEfeito@{LimparMemoriaEfeito}}
+\index{LimparMemoriaEfeito@{LimparMemoriaEfeito}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{LimparMemoriaEfeito()}{LimparMemoriaEfeito()}}
+{\footnotesize\ttfamily \label{funcoes_8h_acf76818332d41724db0b7f97837176ac} 
+bool Limpar\+Memoria\+Efeito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para a lista ligada do efeito nefasto. 
+
+Esta função percorre toda a lista ligada e liberta a memória ocupada por cada nodo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista ligada do efeito nefasto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcoes_8h_a9d3d11fdf97a52941b2a6c57fcd3b233}\index{funcoes.h@{funcoes.h}!ListarMapaAntenas@{ListarMapaAntenas}}
+\index{ListarMapaAntenas@{ListarMapaAntenas}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ListarMapaAntenas()}{ListarMapaAntenas()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a9d3d11fdf97a52941b2a6c57fcd3b233} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Listar\+Mapa\+Antenas (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro}{}\end{DoxyParamCaption})}
+
+
+
+Lê o ficheiro "{}mapa\+Antenas.\+txt"{} e imprime o seu conteúdo no terminal. 
+
+\begin{DoxyReturn}{Returns}
+Retorna NULL pois não altera a lista ligada, apenas exibe os dados. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_ae09b2588f9e56667c5a46599b5047625}\index{funcoes.h@{funcoes.h}!ModificarAntena@{ModificarAntena}}
+\index{ModificarAntena@{ModificarAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ModificarAntena()}{ModificarAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_ae09b2588f9e56667c5a46599b5047625} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Modificar\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{char}]{nova\+Freq}{, }\item[{int}]{novoX}{, }\item[{int}]{novoY}{}\end{DoxyParamCaption})}
+
+
+
+Modifica uma antena existente na lista. 
+
+Procura uma antena nas coordenadas (x, y) e altera sua frequência e coordenadas, se não houver conflito com outra antena nas novas coordenadas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista de antenas. \\
+\hline
+{\em x} & Coordenada X da antena a modificar. \\
+\hline
+{\em y} & Coordenada Y da antena a modificar. \\
+\hline
+{\em nova\+Freq} & Nova frequência da antena. \\
+\hline
+{\em novoX} & Nova coordenada X. \\
+\hline
+{\em novoY} & Nova coordenada Y. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro para o início da lista, possivelmente atualizada. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a733b74dfc3a161524a16ee34c6feb3bc}\index{funcoes.h@{funcoes.h}!ProximaLinhaTabular@{ProximaLinhaTabular}}
+\index{ProximaLinhaTabular@{ProximaLinhaTabular}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{ProximaLinhaTabular()}{ProximaLinhaTabular()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a733b74dfc3a161524a16ee34c6feb3bc} 
+bool Proxima\+Linha\+Tabular (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ant}{, }\item[{\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{nef}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{freq}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{x\+Ant}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{y\+Ant}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{x\+Nef}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{y\+Nef}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma tabela formatada com antenas e efeitos nefastos. 
+
+Cria uma tabela formatada com antenas e efeitos nefastos.
+
+A cada chamada, devolve os dados de uma linha para listagem tabular. Quando ambas as listas forem totalmente percorridas, retorna false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ant} & Ponteiro para ponteiro da lista de antenas. \\
+\hline
+{\em nef} & Ponteiro para ponteiro da lista de efeitos nefastos. \\
+\hline
+{\em freq} & Saída com a frequência da antena (ou \textquotesingle{}\textbackslash{}0\textquotesingle{} se não houver). \\
+\hline
+{\em x\+Ant,y\+Ant} & Coordenadas da antena. \\
+\hline
+{\em x\+Nef,y\+Nef} & Coordenadas do efeito nefasto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se ainda há dados, false se fim das listas. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_aeb3ea380f8a2af9d37510fda68b06ce9}\index{funcoes.h@{funcoes.h}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{funcoes_8h_aeb3ea380f8a2af9d37510fda68b06ce9} 
+\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*} Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antenas}{Antenas}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{inicio\+Nefasto}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista e os efeitos nefastos associados. 
+
+Remove a antena localizada nas coordenadas (x, y) e elimina os efeitos nefastos relacionados a ela. A memória da antena removida é libertada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista de antenas. \\
+\hline
+{\em inicio\+Nefasto} & Ponteiro para a lista de efeitos nefastos. \\
+\hline
+{\em x} & Coordenada X da antena a remover. \\
+\hline
+{\em y} & Coordenada Y da antena a remover. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Antenas\texorpdfstring{$\ast$}{*} Ponteiro para a lista de antenas após a remoção. 
+\end{DoxyReturn}
+\Hypertarget{funcoes_8h_a7eb311b7d290e7b8f39d58ce7183840c}\index{funcoes.h@{funcoes.h}!RemoverEfeitosNefastos@{RemoverEfeitosNefastos}}
+\index{RemoverEfeitosNefastos@{RemoverEfeitosNefastos}!funcoes.h@{funcoes.h}}
+\doxysubsubsection{\texorpdfstring{RemoverEfeitosNefastos()}{RemoverEfeitosNefastos()}}
+{\footnotesize\ttfamily \label{funcoes_8h_a7eb311b7d290e7b8f39d58ce7183840c} 
+\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} Remover\+Efeitos\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_efeito_nefasto}{Lista\+Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{inicio}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Remove efeitos nefastos relacionados a uma antena. 
+
+Percorre a lista de efeitos e remove todos os pontos afetados pelas coordenadas (x, y).
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Ponteiro para o início da lista de efeitos nefastos. \\
+\hline
+{\em x} & Coordenada X da antena. \\
+\hline
+{\em y} & Coordenada Y da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista\+Efeito\+Nefasto\texorpdfstring{$\ast$}{*} Lista atualizada sem os efeitos removidos. 
+\end{DoxyReturn}

@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['procuralargura_0',['ProcuraLargura',['../funcoes_fase2_8c.html#ac3a3a31f00ca86b41b7a2357247d34ed',1,'ProcuraLargura(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#ac3a3a31f00ca86b41b7a2357247d34ed',1,'ProcuraLargura(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c']]],
+  ['procuraprofundidade_1',['ProcuraProfundidade',['../funcoes_fase2_8c.html#aabe58ef638a38f1e51c1642921ed06a1',1,'ProcuraProfundidade(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#aabe58ef638a38f1e51c1642921ed06a1',1,'ProcuraProfundidade(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c']]],
+  ['procurarecursiva_2',['ProcuraRecursiva',['../funcoes_fase2_8c.html#a5ca6ba359bceaf3e486304e35a6f7b77',1,'ProcuraRecursiva(Vertices *v, Visitados *visitados):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#a5ca6ba359bceaf3e486304e35a6f7b77',1,'ProcuraRecursiva(Vertices *v, Visitados *visitados):&#160;funcoesFase2.c']]],
+  ['proximalinhatabular_3',['ProximaLinhaTabular',['../funcoes_8c.html#a733b74dfc3a161524a16ee34c6feb3bc',1,'ProximaLinhaTabular(Antenas **ant, ListaEfeitoNefasto **nef, char *freq, int *xAnt, int *yAnt, int *xNef, int *yNef):&#160;funcoes.c'],['../funcoes_8h.html#a733b74dfc3a161524a16ee34c6feb3bc',1,'ProximaLinhaTabular(Antenas **ant, ListaEfeitoNefasto **nef, char *freq, int *xAnt, int *yAnt, int *xNef, int *yNef):&#160;funcoes.c']]]
+];

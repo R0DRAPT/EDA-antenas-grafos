@@ -1,0 +1,68 @@
+\doxysection{Vertices Struct Reference}
+\hypertarget{struct_vertices}{}\label{struct_vertices}\index{Vertices@{Vertices}}
+
+
+Estrutura que representa uma antena no grafo.  
+
+
+
+
+{\ttfamily \#include $<$dados\+Fase2.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_vertices_aa1f816cd1313e7d2738c25d33719cd20}{freq}}
+\item 
+\Hypertarget{struct_vertices_a6150e0515f7202e2fb518f7206ed97dc}\label{struct_vertices_a6150e0515f7202e2fb518f7206ed97dc} 
+int {\bfseries x}
+\item 
+int \mbox{\hyperlink{struct_vertices_a0a2f84ed7838f07779ae24c5a9086d33}{y}}
+\item 
+bool \mbox{\hyperlink{struct_vertices_a7432ec6b760cca5a63570ce7d9f9565b}{visitado}}
+\item 
+\mbox{\hyperlink{struct_arestas}{Arestas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_vertices_a2c0e1bc94574e3383d5ec60050aac70c}{adjacencias}}
+\item 
+struct \mbox{\hyperlink{struct_vertices}{Vertices}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_vertices_a759120945616964ed562869f80651d20}{prox}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura que representa uma antena no grafo. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_vertices_a2c0e1bc94574e3383d5ec60050aac70c}\index{Vertices@{Vertices}!adjacencias@{adjacencias}}
+\index{adjacencias@{adjacencias}!Vertices@{Vertices}}
+\doxysubsubsection{\texorpdfstring{adjacencias}{adjacencias}}
+{\footnotesize\ttfamily \label{struct_vertices_a2c0e1bc94574e3383d5ec60050aac70c} 
+\mbox{\hyperlink{struct_arestas}{Arestas}}\texorpdfstring{$\ast$}{*} adjacencias}
+
+Lista de arestas que ligam a antenas com a mesma frequência. \Hypertarget{struct_vertices_aa1f816cd1313e7d2738c25d33719cd20}\index{Vertices@{Vertices}!freq@{freq}}
+\index{freq@{freq}!Vertices@{Vertices}}
+\doxysubsubsection{\texorpdfstring{freq}{freq}}
+{\footnotesize\ttfamily \label{struct_vertices_aa1f816cd1313e7d2738c25d33719cd20} 
+char freq}
+
+Frequência da antena \Hypertarget{struct_vertices_a759120945616964ed562869f80651d20}\index{Vertices@{Vertices}!prox@{prox}}
+\index{prox@{prox}!Vertices@{Vertices}}
+\doxysubsubsection{\texorpdfstring{prox}{prox}}
+{\footnotesize\ttfamily \label{struct_vertices_a759120945616964ed562869f80651d20} 
+struct \mbox{\hyperlink{struct_vertices}{Vertices}}\texorpdfstring{$\ast$}{*} prox}
+
+Apontador para o próximo vértice na lista ligada. \Hypertarget{struct_vertices_a7432ec6b760cca5a63570ce7d9f9565b}\index{Vertices@{Vertices}!visitado@{visitado}}
+\index{visitado@{visitado}!Vertices@{Vertices}}
+\doxysubsubsection{\texorpdfstring{visitado}{visitado}}
+{\footnotesize\ttfamily \label{struct_vertices_a7432ec6b760cca5a63570ce7d9f9565b} 
+bool visitado}
+
+Indica se o vertice ja foi visitado \Hypertarget{struct_vertices_a0a2f84ed7838f07779ae24c5a9086d33}\index{Vertices@{Vertices}!y@{y}}
+\index{y@{y}!Vertices@{Vertices}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{struct_vertices_a0a2f84ed7838f07779ae24c5a9086d33} 
+int y}
+
+Coordenadas X e Y da antena 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/maced/\+Desktop/\+Universidade/1\+Ano/2\+Semestre/\+EDA/\+TP\+\_\+\+EDA/src/\mbox{\hyperlink{dados_fase2_8h}{dados\+Fase2.\+h}}\end{DoxyCompactItemize}

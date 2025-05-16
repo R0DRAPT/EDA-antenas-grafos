@@ -1,0 +1,17 @@
+var searchData=
+[
+  ['lerlistaficheiro_0',['LerListaFicheiro',['../funcoes_8c.html#a193b55ed6016900f0a06f65bb44a5f3a',1,'LerListaFicheiro(const char *nomeFicheiro):&#160;funcoes.c'],['../funcoes_8h.html#a193b55ed6016900f0a06f65bb44a5f3a',1,'LerListaFicheiro(const char *nomeFicheiro):&#160;funcoes.c']]],
+  ['lerlistaverticesficheiro_1',['LerListaVerticesFicheiro',['../funcoes_fase2_8c.html#a7e323400b6f8e3ab09c8a8f15cf4aee9',1,'LerListaVerticesFicheiro(const char *nomeFicheiro):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#a7e323400b6f8e3ab09c8a8f15cf4aee9',1,'LerListaVerticesFicheiro(const char *nomeFicheiro):&#160;funcoesFase2.c']]],
+  ['libertarcaminhos_2',['LibertarCaminhos',['../funcoes_fase2_8c.html#a376e010f1e7d7965aff13522d4529731',1,'LibertarCaminhos(Caminho *lista):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#a376e010f1e7d7965aff13522d4529731',1,'LibertarCaminhos(Caminho *lista):&#160;funcoesFase2.c']]],
+  ['limparmemoria_3',['LimparMemoria',['../funcoes_8c.html#ae49fb653c99abf2e1994ce32ab397369',1,'LimparMemoria(Antenas *inicio):&#160;funcoes.c'],['../funcoes_8h.html#ae49fb653c99abf2e1994ce32ab397369',1,'LimparMemoria(Antenas *inicio):&#160;funcoes.c']]],
+  ['limparmemoriaefeito_4',['LimparMemoriaEfeito',['../funcoes_8c.html#acf76818332d41724db0b7f97837176ac',1,'LimparMemoriaEfeito(ListaEfeitoNefasto *lista):&#160;funcoes.c'],['../funcoes_8h.html#acf76818332d41724db0b7f97837176ac',1,'LimparMemoriaEfeito(ListaEfeitoNefasto *lista):&#160;funcoes.c']]],
+  ['limparmemoriagrafos_5',['LimparMemoriaGrafos',['../funcoes_fase2_8c.html#ab8f8120a3adb6cc2091293e73dad2ebf',1,'LimparMemoriaGrafos(Grafos *grafo):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#ab8f8120a3adb6cc2091293e73dad2ebf',1,'LimparMemoriaGrafos(Grafos *grafo):&#160;funcoesFase2.c']]],
+  ['listacaminhos_6',['ListaCaminhos',['../struct_lista_caminhos.html',1,'']]],
+  ['listaefeitonefasto_7',['ListaEfeitoNefasto',['../struct_lista_efeito_nefasto.html',1,'']]],
+  ['listaintersecoes_8',['ListaIntersecoes',['../struct_lista_intersecoes.html',1,'ListaIntersecoes'],['../dados_fase2_8h.html#a8cb0687a044198eae58de6b17b82f4e1',1,'ListaIntersecoes:&#160;dadosFase2.h']]],
+  ['listapares_9',['ListaPares',['../struct_lista_pares.html',1,'']]],
+  ['listarmapaantenas_10',['ListarMapaAntenas',['../funcoes_8c.html#a9d3d11fdf97a52941b2a6c57fcd3b233',1,'ListarMapaAntenas(const char *nomeFicheiro):&#160;funcoes.c'],['../funcoes_8h.html#a9d3d11fdf97a52941b2a6c57fcd3b233',1,'ListarMapaAntenas(const char *nomeFicheiro):&#160;funcoes.c']]],
+  ['listarmapavertices_11',['ListarMapaVertices',['../funcoes_fase2_8c.html#a143b335de2fa3e56f7c78b4d6ebc6b51',1,'ListarMapaVertices(const char *nomeFicheiro):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#a143b335de2fa3e56f7c78b4d6ebc6b51',1,'ListarMapaVertices(const char *nomeFicheiro):&#160;funcoesFase2.c']]],
+  ['listartodoscaminhos_12',['ListarTodosCaminhos',['../funcoes_fase2_8c.html#ab16ec66fe4c062a7f79f10218ab420ff',1,'ListarTodosCaminhos(Grafos *grafo, int xOrigem, int yOrigem, int xDestino, int yDestino):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#ab16ec66fe4c062a7f79f10218ab420ff',1,'ListarTodosCaminhos(Grafos *grafo, int xOrigem, int yOrigem, int xDestino, int yDestino):&#160;funcoesFase2.c']]],
+  ['listavertices_13',['listaVertices',['../struct_grafos.html#a9e8ea1a7595c6749a98a36847fd84905',1,'Grafos']]]
+];

@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['parantenas_0',['ParAntenas',['../struct_par_antenas.html',1,'']]],
+  ['pares_1',['pares',['../struct_lista_pares.html#aea36bb0defd1f536fc46e1f5b581bbc6',1,'ListaPares']]],
+  ['primeiro_2',['primeiro',['../struct_lista_caminhos.html#ae9c521dce328386c7aa2aacb900a3926',1,'ListaCaminhos']]],
+  ['procuralargura_3',['ProcuraLargura',['../funcoes_fase2_8c.html#ac3a3a31f00ca86b41b7a2357247d34ed',1,'ProcuraLargura(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#ac3a3a31f00ca86b41b7a2357247d34ed',1,'ProcuraLargura(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c']]],
+  ['procuraprofundidade_4',['ProcuraProfundidade',['../funcoes_fase2_8c.html#aabe58ef638a38f1e51c1642921ed06a1',1,'ProcuraProfundidade(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#aabe58ef638a38f1e51c1642921ed06a1',1,'ProcuraProfundidade(Vertices *listaVertices, int x, int y):&#160;funcoesFase2.c']]],
+  ['procurarecursiva_5',['ProcuraRecursiva',['../funcoes_fase2_8c.html#a5ca6ba359bceaf3e486304e35a6f7b77',1,'ProcuraRecursiva(Vertices *v, Visitados *visitados):&#160;funcoesFase2.c'],['../funcoes_fase2_8h.html#a5ca6ba359bceaf3e486304e35a6f7b77',1,'ProcuraRecursiva(Vertices *v, Visitados *visitados):&#160;funcoesFase2.c']]],
+  ['prox_6',['prox',['../struct_antenas.html#aaf9d49f0ec999ad34ab0b5cd0a926974',1,'Antenas::prox'],['../struct_lista_efeito_nefasto.html#a77d1019c872f54faf87759dd2b46a561',1,'ListaEfeitoNefasto::prox'],['../struct_arestas.html#a082b8185df61e78eb8b25383ff160b80',1,'Arestas::prox'],['../struct_vertices.html#a759120945616964ed562869f80651d20',1,'Vertices::prox'],['../struct_visitados.html#aa7e2d99b2bd0c694fae1f704e3dd6fc9',1,'Visitados::prox'],['../struct_caminho.html#ab28945fe16e1f699d0f2953250f3b3f5',1,'Caminho::prox']]],
+  ['proximalinhatabular_7',['ProximaLinhaTabular',['../funcoes_8c.html#a733b74dfc3a161524a16ee34c6feb3bc',1,'ProximaLinhaTabular(Antenas **ant, ListaEfeitoNefasto **nef, char *freq, int *xAnt, int *yAnt, int *xNef, int *yNef):&#160;funcoes.c'],['../funcoes_8h.html#a733b74dfc3a161524a16ee34c6feb3bc',1,'ProximaLinhaTabular(Antenas **ant, ListaEfeitoNefasto **nef, char *freq, int *xAnt, int *yAnt, int *xNef, int *yNef):&#160;funcoes.c']]]
+];
