@@ -1,56 +1,94 @@
-## Descrição do Projeto
+# Antenas e Interferências — Listas Ligadas e Grafos em C
 
-Este projeto foi desenvolvido no âmbito da unidade curricular de **Estruturas de Dados Avançadas (EDA)**, lecionada pelo professor Luís Ferreira, no 2º semestre do 1º ano. O seu principal objetivo é reforçar e aplicar os conhecimentos adquiridos ao longo do semestre.
+Projeto desenvolvido no âmbito da unidade curricular de **Estruturas de Dados Avançadas (EDA)**, lecionada pelo professor Luís Ferreira, no 2.º semestre do 1.º ano da Licenciatura em Engenharia de Sistemas Informáticos — **IPCA 2024/2025**.
 
-O projeto foca-se na modelação e análise da distribuição de antenas de transmissão numa cidade representada por uma matriz bidimensional. Cada antena possui uma frequência de ressonância, identificada por um caractere. O objetivo é processar esses dados, identificar padrões de interferência e estruturar as informações de forma eficiente, utilizando listas ligadas e grafos.
+O programa modela a distribuição de antenas de transmissão numa cidade representada por uma matriz bidimensional. Cada antena tem uma frequência de ressonância, identificada por um caractere (`A`, `O`, …). O objetivo é processar estes dados, identificar zonas de interferência e estruturar a informação de forma eficiente com **listas ligadas** (Fase 1) e **grafos** (Fase 2).
+
+## Funcionalidades
+
+### Fase 1 — Listas ligadas
+- Leitura do mapa da cidade a partir de ficheiro e carregamento das antenas para uma lista ligada
+- Inserção, alteração e remoção de antenas
+- Cálculo das localizações com **efeito nefasto** (interferência entre antenas da mesma frequência), recalculado após cada alteração
+- Listagem tabular das antenas e dos efeitos nefastos
+- Gravação e leitura da lista de antenas em **ficheiro binário**
+
+### Fase 2 — Grafos
+- Construção de um grafo em que cada antena é um vértice, com arestas entre antenas da mesma frequência
+- **Procura em profundidade (DFS)** e **procura em largura (BFS)** a partir de uma antena
+- Identificação de **todos os caminhos** possíveis entre duas antenas
+- Cálculo das **interseções** entre pares de antenas de frequências diferentes
+- Gravação do grafo em **ficheiro binário**
+
+## Exemplo de execução
+
+Mapa de entrada:
+
+```
+............
+........O...
+.....O......
+.......O....
+....O.......
+......A.....
+............
+............
+........A...
+.........A..
+............
+............
+```
+
+Excerto do resultado:
+
+```
+Grafo criado com 10 vértices e 12 arestas.
+
+Procura em Profundidade:
+Visitado: O (3, 7)
+Visitado: O (5, 6)
+Visitado: O (4, 9)
+Visitado: O (2, 10)
+
+Caminho(s) encontrado(s):
+Caminho 1: (A - 2,2) -> (A - 6,8)
+Caminho 2: (A - 2,2) -> (A - 9,10) -> (A - 6,8)
+...
+```
 
 ## Organização
 
-- **`src/`**: Código da solução desenvolvida
-- **`doxdoc/`**: Documentação com o relatório gerado pela ferramenta Doxygen
+- **`src/`** — código-fonte (`main.c`, `funcoes.c` para a Fase 1, `funcoesFase2.c` para a Fase 2) e `Makefile`
+- **`doxdoc/`** — documentação do código gerada com Doxygen
 
-## Como Executar o Código
+## Como compilar e executar
 
 ### Pré-requisitos
+- [gcc](https://gcc.gnu.org/install/) e [make](https://www.gnu.org/software/make/) (no Windows, através do [MSYS2](https://www.msys2.org/) / MinGW)
+- [Doxygen](https://www.doxygen.nl/index.html) (apenas para gerar a documentação)
 
-Certifique-se de que as seguintes ferramentas estão instaladas no sistema:
-- [gcc](https://gcc.gnu.org/install/) 
-- [make](https://www.gnu.org/software/make/)
-- [Doxygen](https://www.doxygen.nl/index.html)
+### Compilar e executar
 
-### Passos para Compilar e Executar
+Na pasta `src/`:
 
-1. **Compilar o Código**
+```bash
+make
+```
 
-   Abra o terminal e navegue até a pasta onde o `Makefile` está localizado. Para compilar o código, execute o comando:
-   ```[bash]
-   make
-   ```
+O comando compila o projeto e executa o programa.
 
-2. **Executar o Programa**
+Para apagar os ficheiros gerados na compilação:
 
-   Após a compilação bem-sucedida, você pode executar o programa com o seguinte comando:
-   ```[bash]
-   make run
-   ```
+```bash
+make clean
+```
 
-3. **Limpar Arquivos Gerados**
+> **Nota (Windows):** se os acentos aparecerem trocados na consola, execute `chcp 65001` antes de correr o programa.
 
-   Para remover os arquivos objetos e o executável gerado, execute:
-   ```[bash]
-   make clean
-   ```
-## Como Criar a Documentação com Doxygen
+## Documentação
 
-1. **Criar o Arquivo `Doxyfile`**
+A documentação do código está na pasta `doxdoc/`. Para a gerar de novo:
 
-    No terminal, dentro do diretório do seu projeto, execute o seguinte comando para criar um arquivo de configuração `Doxyfile`:
-    ```[bash]   
-    doxygen -g
-    ```
-2. **Criar a Documentação**
-
-    Após configurar o `Doxyfile`, execute o seguinte comando para criar a documentação:
-    ```[bash]   
-    doxygen Doxyfile
-    ```
+```bash
+doxygen Doxyfile
+```
